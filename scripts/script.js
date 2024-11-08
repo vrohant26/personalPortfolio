@@ -1,5 +1,5 @@
-import { animate } from "./gsap.js";
 import { intiBarba } from "./barba.js";
+import { mobileMenu } from "./gsap.js";
 
-animate();
 intiBarba();
+mobileMenu();

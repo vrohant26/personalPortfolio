@@ -5,18 +5,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-
 :root {
-  --background  : #1a1a1a;
+  --primary: #a653da;
+  --background: #1a1a1a;
   --white: #ffffff;
 }
-
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
@@ -24,10 +22,148 @@ body {
   color: var(--white);
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 22vw;
+  line-height: 22vw;
+  font-family: "Arges", sans-serif;
 }
 
 h2 {
-  position: absolute;
-  left: 0;
+  font-size: 12.5vw;
+  line-height: 12.5vw;
+  font-family: "Arges", sans-serif;
+}
+
+h4 {
+  font-size: 2vw;
+  font-weight: 400;
+}
+
+p,
+li {
+  font-size: 18px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.pl-5 {
+  padding-left: 5vw;
+}
+.pr-5 {
+  padding-right: 5vw;
+}
+.pt-5 {
+  padding-top: 5vw;
+}
+.pb-5 {
+  padding-bottom: 5vw;
+}
+
+.gap20 {
+  gap: 20px;
+}
+
+.gap50 {
+  gap: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+nav .logo {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50px;
+  background-color: var(--primary);
+}
+
+nav .mobile-menu,
+nav .mobile-menu-full {
+  display: none;
+}
+
+nav .menu-item ul li:hover {
+  cursor: pointer;
+  color: var(--primary);
+  transition: color 0.2s ease-in-out;
+}
+
+section {
+  height: 100vh;
+}
+
+/* tablets */
+@media only screen and (max-width: 768px) {
+}
+
+/* phone */
+@media only screen and (max-width: 480px) {
+  nav .logo {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  nav .menu-item {
+    display: none;
+  }
+
+  nav .mobile-menu {
+    display: block;
+  }
+
+  nav .mobile-menu-full {
+    /* display: block; */
+    position: absolute;
+    top: 30vh;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+  }
+
+  nav .mobile-menu .menu {
+    height: 15px;
+    overflow: hidden;
+  }
+  nav .mobile-menu .menu p {
+    transform: translateY(0%);
+  }
+
+  nav .mobile-menu-full ul {
+    flex-direction: column;
+  }
+
+  nav .mobile-menu-full ul li {
+    font-size: 15vw;
+  }
 }
