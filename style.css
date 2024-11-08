@@ -21,7 +21,6 @@ body {
   background-color: var(--background);
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
   text-transform: uppercase;
 }
 
@@ -31,8 +30,8 @@ a {
 }
 
 h1 {
-  font-size: 22vw;
-  line-height: 22vw;
+  font-size: 20.5vw;
+  line-height: 15vw;
   font-family: "Arges", sans-serif;
 }
 
@@ -70,10 +69,10 @@ li {
 }
 
 .pl-5 {
-  padding-left: 5vw;
+  padding-left: 2vw;
 }
 .pr-5 {
-  padding-right: 5vw;
+  padding-right: 2vw;
 }
 .pt-5 {
   padding-top: 5vw;
@@ -95,7 +94,7 @@ ul {
 }
 
 nav {
-  height: 100px;
+  padding-top: 1vw;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -119,8 +118,26 @@ nav .menu-item ul li:hover {
   transition: color 0.2s ease-in-out;
 }
 
-section {
+.hero {
+  padding-top: 100px;
   height: 100vh;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.hero .hero-content {
+  width: 100%;
+}
+
+.social-links a {
+  text-decoration: underline;
+}
+
+.hero .hero-content img {
+  width: 100%;
+  height: 50vh;
+  object-position: bottom;
+  object-fit: cover;
 }
 
 /* tablets */
@@ -129,6 +146,17 @@ section {
 
 /* phone */
 @media only screen and (max-width: 480px) {
+  .pl-5 {
+    padding-left: 5vw;
+  }
+  .pr-5 {
+    padding-right: 5vw;
+  }
+
+  nav {
+    padding-top: 5vw;
+  }
+
   nav .logo {
     width: 7vw;
     height: 7vw;
@@ -143,7 +171,6 @@ section {
   }
 
   nav .mobile-menu-full {
-    /* display: block; */
     position: absolute;
     top: 30vh;
     width: 100vw;
@@ -165,5 +192,9 @@ section {
 
   nav .mobile-menu-full ul li {
     font-size: 15vw;
+  }
+
+  .hero .hero-content img {
+    height: 70vh;
   }
 }
