@@ -34,6 +34,7 @@ export function mobileMenu() {
     tl.reverse(); // Reverse the animation to close
   });
 
+  
   links.forEach((link) => {
     link.addEventListener("click", () => {
       tl.reverse(); // Close the menu when a link is clicked

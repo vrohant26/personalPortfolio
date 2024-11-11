@@ -7,37 +7,10 @@
   </head>
   <link rel="stylesheet" href="./style.css" />
   <body data-barba="wrapper">
-    <nav class="d-flex align-center space-between pl-5 pr-5">
-      <div class="logo"></div>
-      <div class="menu-item">
-        <ul class="d-flex gap20">
-          <li><a href="/">home</li></a>
-          <li>Work</li>
-          <li>
-            <a href="./about.html">About</a>
-          </li>
-          <li>Contact</li>
-        </ul>
-      </div>
-      <div class="mobile-menu">
-        <div class="menu">
-          <p id="open">menu</p>
-          <p id="close">close</p>
-        </div>
-      </div>
-      <div class="mobile-menu-full">
-        <ul class="d-flex gap50">
-          <li>Home</li>
-          <li>Work</li>
-          <li>
-            <a href="./about.html">About</a>
-          </li>
-          <li>Contact</li>
-        </ul>
-      </div>
-    </nav>
+   <div id="navbar"></div>
 
     <main data-barba="container" data-barba-namespace="home">
+
       <section class="hero d-flex   pl-5 pr-5">
         <div class="hero-name d-flex space-between">
           <h1>Rohant</h1>
@@ -47,16 +20,38 @@
           <img src="https://picsum.photos/seed/picsum/1200/800" alt="dummy">
         </div>
         <div class="social-links d-flex space-between">
-          <a href=""><p>LinkedIn</p></a>
-          <a href=""><p>whatsapp</p></a>
+          <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/"><p>LinkedIn</p></a>
+          <a target="_blank" href="https://wa.link/b3yux8"><p>whatsapp</p></a>
         </div>
       </section>
+
+      <section class="about pl-5 pr-5 h-full d-flex center">
+        <h4>Hi there! I’m Rohant, a freelance <span class="highlight-text">web designer</span> and <span class="highlight-text">developer</span> with a passion for creating clean, beautiful designs. I specialize in crafting interactive websites that not only look stunning but also engage and delight users. My mission is to transform your ideas into digital experiences that are easy to navigate and fun to explore.</h4>
+      </section>
+
+      <section class="selected-work">
+        <div class="title d-flex space-between pl-5 pr-5">
+          <h1>Selected</h1>
+          <div class="project-dates gap20 d-flex">
+            <p>2022</p>
+            <div class="line"></div>
+            <p class="currentYear"></p>
+          </div>
+          <h1>Work</h1>
+        </div>
+
+        <div class="project-card h-full ">
+
+        </div>
+
+      </section>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.16"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
