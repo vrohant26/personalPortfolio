@@ -1,0 +1,41 @@
+{
+  "selectedWorks": [
+    {
+      "id": 1,
+      "count": "01/04",
+      "backgroundColor": "#9b0000",
+
+      "projectName": "Portfolio",
+      "projectVideoLink": "video1.mp4",
+      "projectService": "Design | Development | Low Code",
+      "description": "This portfolio website was crafted specifically for a social media manager aiming to impress recruiters. Interactive elements and an intuitive layout make it easy for recruiters to navigate, quickly get a sense of the manager's expertise, and see the impact of their work at a glance."
+    },
+    {
+      "id": 2,
+      "count": "02/04",
+      "backgroundColor": "#00316A",
+      "projectName": "BrandInstitute",
+      "projectVideoLink": "video2.mp4",
+      "projectService": "Development | Low code | CMS",
+      "description": "I created a professional and user-centric website for Brand Institute, a leader in brand name development and identity for the healthcare and consumer sectors. The redesign focused on enhancing user experience and showcasing Brand Institute’s impressive portfolio, including high-profile pharmaceutical and consumer brands."
+    },
+    {
+      "id": 3,
+      "count": "03/04",
+      "backgroundColor": "#8E3E0B",
+      "projectName": "ThynkDifferent",
+      "projectVideoLink": "video2.mp4",
+      "projectService": "Design | development | Low code | CMS",
+      "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
+    },
+    {
+      "id": 4,
+      "count": "04/04",
+      "backgroundColor": "#4A2B92",
+      "projectName": "Albatross Arts",
+      "projectVideoLink": "video2.mp4",
+      "projectService": "Design | development | Full Code",
+      "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
+    }
+  ]
+}

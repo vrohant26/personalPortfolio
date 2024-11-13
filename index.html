@@ -7,7 +7,35 @@
   </head>
   <link rel="stylesheet" href="./style.css" />
   <body data-barba="wrapper">
-   <div id="navbar"></div>
+   <nav id="nav"  class="d-flex align-center space-between pl-5 pr-5">
+    <div class="logo"></div>
+    <div class="menu-item">
+      <ul class="d-flex gap20">
+        <li><a href="/">home</li></a>
+        <li>Work</li>
+        <li>
+          <a href="./about.html">About</a>
+        </li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="mobile-menu">
+      <div class="menu">
+        <p id="open">menu</p>
+        <p id="close">close</p>
+      </div>
+    </div>
+    <div class="mobile-menu-full">
+      <ul class="d-flex gap50">
+        <li>Home</li>
+        <li>Work</li>
+        <li>
+          <a href="./about.html">About</a>
+        </li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </nav>
 
     <main data-barba="container" data-barba-namespace="home">
 
@@ -30,7 +58,7 @@
       </section>
 
       <section class="selected-work">
-        <div class="title d-flex space-between pl-5 pr-5">
+        <div class="title d-flex space-between pl-5 pr-5 mb-10">
           <h1>Selected</h1>
           <div class="project-dates gap20 d-flex">
             <p>2022</p>
@@ -39,13 +67,92 @@
           </div>
           <h1>Work</h1>
         </div>
-
-        <div class="project-card h-full ">
-
-        </div>
-
+        <div id="selectedProject"></div>
       </section>
 
+      <section class="faq h-full d-flex space-between   pl-5 pr-5">
+       
+        <div class="left">
+          <h1>FAQ</h1>
+        </div>
+        <div class="right">
+         
+          <div class="accordion">
+
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+           <h4> 01. What Services Do you offer ? </h4>
+           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Our services include <span class="highlight-text">web design</span>, <span class="highlight-text">development</span>, <span class="highlight-text">website management</span>, and <span class="highlight-text">SEO</span>. We focus on creating visually appealing, functional websites that perform well, remain current, and rank higher in search engine results.</h6>  
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+           <h4> 02. How long does a typical project take? </h4>
+           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Project timelines vary based on requirements. Once we have all the necessary information, basic design typically takes 1 week, and development around 2 weeks, totaling approximately <span class="highlight-text">4-5 weeks</span>.</h6>  
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+           <h4> 03. What do you need from me to start a project? </h4>
+           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>To get started, I need details about your business, including content and images if you have them. If not, I can create content and visuals for you. Your own content can often be more relatable, but I’m happy to collaborate and create together if needed.</h6>  
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+           <h4> 04. How much does a project typically cost? </h4>
+           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Project costs depend on the website type and specific requirements. We offer services for various website types, including e-commerce, business, personal, blog, and portfolio sites. <span class="highlight-text"><u>Contact</u></span> for a personalized quote tailored to your needs!</h6>  
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+           <h4> 05. Can I pay you in installments ? </h4>
+           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Yes, payments can be split into four installments: an initial payment before design, one after design, another before development, and the final payment after development completion.</h6>  
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="archive d-flex align-center h-full">
+        
+        <div class="top d-flex space-between ">
+          <div class="archive-project"> </div>
+          <div class="archive-project"> </div>
+          <div class="archive-project"> </div>
+          <div class="archive-project"> </div>
+          
+          
+         
+        </div>
+
+        <div class="bottom d-flex space-between ">
+           <div class="archive-project"> </div>
+           <div class="archive-project"> </div>
+          <div class="archive-project"> </div>
+          <div class="archive-project"> </div>
+        
+          
+          
+        </div>
+        
+      </section>
+
+    
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
