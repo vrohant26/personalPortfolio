@@ -20,7 +20,7 @@ export function mobileMenu() {
 
   open.addEventListener("click", () => {
     gsap.to(".menu p", {
-      yPercent: -150,
+      yPercent: -100,
       duration: 0.2,
     });
     tl.play(); // Play the opening animation
@@ -76,4 +76,69 @@ export function accordion() {
       }
     };
   }
+}
+
+export function preloader() {
+  const preloader = document.querySelector(".preloader");
+  const name = new SplitType(".hero-name h1", { types: "chars" });
+
+  const tl = gsap.timeline();
+
+  tl.from(".preloader .counter", {
+    textContent: 0,
+    duration: 1,
+    ease: Power1.easeIn,
+    snap: { textContent: 1 },
+    stagger: 1,
+  });
+
+  tl.to(
+    preloader,
+    {
+      opacity: 0,
+      delay: 1,
+      duration: 1,
+      onComplete: () => {
+        document.querySelector("nav").style.zIndex = "999";
+        preloader.style.display = "none";
+      },
+    },
+    "-=1"
+  );
+
+  tl.from(".logo", {
+    scale: 300,
+    duration: 1,
+  });
+
+  tl.from(
+    name.chars,
+    {
+      yPercent: 100,
+      stagger: -0.012,
+    },
+    "-=0.5"
+  );
+
+  tl.from(
+    "nav .menu-item ul li",
+    {
+      opacity: 0,
+      xPercent: 50,
+      duration: 0.5,
+      stagger: -0.05,
+    },
+    "-=0.5"
+  );
+
+  tl.from(
+    ".hero-content,  .social-links",
+    {
+      opacity: 0,
+      yPercent: 50,
+      duration: 0.5,
+      stagger: 0.5,
+    },
+    "-=0.5"
+  );
 }

@@ -1,5 +1,5 @@
 import { intiBarba } from "./barba.js";
-import { mobileMenu, accordion } from "./gsap.js";
+import { mobileMenu, accordion, preloader } from "./gsap.js";
 import { addProject } from "../components/selectedProjects.js";
 
 function smoothScroll() {
@@ -15,7 +15,9 @@ function smoothScroll() {
 
 function getCurrentYear() {
   const currentYear = new Date().getFullYear();
-  document.querySelector(".currentYear").innerHTML = `${currentYear}`;
+  document.querySelectorAll(".currentYear").forEach((element) => {
+    element.innerHTML = `${currentYear}`;
+  });
 }
 
 function navbar() {
@@ -27,7 +29,11 @@ function navbar() {
       let currentScroll = self.scroll();
 
       if (currentScroll > lastScroll && currentScroll > 100) {
-        gsap.to(navbar, { top: "-100%", duration: 2, ease: "power2.out" });
+        gsap.to(navbar, {
+          top: "-100%",
+          duration: 1,
+          ease: "power2.out",
+        });
       } else if (currentScroll < lastScroll) {
         gsap.to(navbar, { top: "0", duration: 1, ease: "power2.out" });
       }
@@ -37,6 +43,7 @@ function navbar() {
   });
 }
 
+preloader();
 accordion();
 navbar();
 mobileMenu();

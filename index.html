@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-  </head>
-  <link rel="stylesheet" href="./style.css" />
-  <body data-barba="wrapper">
-   <nav id="nav"  class="d-flex align-center space-between pl-5 pr-5">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+</head>
+<link rel="stylesheet" href="./style.css" />
+
+<body data-barba="wrapper">
+
+<div class="preloader h-full d-flex center">
+    <h2><span class="counter">100</span>%</h2>
+    
+</div>
+
+  <nav id="nav" class="d-flex align-center space-between pl-5 pr-5">
     <div class="logo"></div>
     <div class="menu-item">
       <ul class="d-flex gap20">
@@ -37,128 +45,232 @@
     </div>
   </nav>
 
-    <main data-barba="container" data-barba-namespace="home">
+  <main data-barba="container" data-barba-namespace="home">
 
-      <section class="hero d-flex   pl-5 pr-5">
-        <div class="hero-name d-flex space-between">
-          <h1>Rohant</h1>
-          <h1>Villarosa</h1>
-        </div>
-        <div class="hero-content">
-          <img src="https://picsum.photos/seed/picsum/1200/800" alt="dummy">
-        </div>
-        <div class="social-links d-flex space-between">
-          <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/"><p>LinkedIn</p></a>
-          <a target="_blank" href="https://wa.link/b3yux8"><p>whatsapp</p></a>
-        </div>
-      </section>
+    <section class="hero d-flex   pl-5 pr-5">
+      <div class="hero-name d-flex space-between">
+        <h1>Rohant</h1>
+        <h1>Villarosa</h1>
+      </div>
+      <div class="hero-content">
+        <video autoplay muted loop playsinline src="https://strapi-cms-3mz0.onrender.com/uploads/240123_Milk_Video_2024_Low_V2_8abec16071.mp4"></video>
+      </div>
+      <div class="social-links d-flex space-between">
+        <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/">
+          <p>LinkedIn</p>
+        </a>
+        <a target="_blank" href="https://wa.link/b3yux8">
+          <p>whatsapp</p>
+        </a>
+      </div>
+    </section>
 
-      <section class="about pl-5 pr-5 h-full d-flex center">
-        <h4>Hi there! I’m Rohant, a freelance <span class="highlight-text">web designer</span> and <span class="highlight-text">developer</span> with a passion for creating clean, beautiful designs. I specialize in crafting interactive websites that not only look stunning but also engage and delight users. My mission is to transform your ideas into digital experiences that are easy to navigate and fun to explore.</h4>
-      </section>
+    <section class="about pl-5 pr-5 h-full d-flex center">
+      <h4>Hi there! I’m Rohant, a freelance <span class="highlight-text">web designer</span> and <span
+          class="highlight-text">developer</span> with a passion for creating clean, beautiful designs. I specialize in
+        crafting interactive websites that not only look stunning but also engage and delight users. My mission is to
+        transform your ideas into digital experiences that are easy to navigate and fun to explore.</h4>
+    </section>
 
-      <section class="selected-work">
-        <div class="title d-flex space-between pl-5 pr-5 mb-10">
-          <h1>Selected</h1>
-          <div class="project-dates gap20 d-flex">
-            <p>2022</p>
-            <div class="line"></div>
-            <p class="currentYear"></p>
-          </div>
-          <h1>Work</h1>
+    <section class="selected-work">
+      <div class="title d-flex space-between pl-5 pr-5 mb-10">
+        <h1>Selected</h1>
+        <div class="project-dates align-center gap20 d-flex">
+          <p>2022</p>
+          <div class="line"></div>
+          <p class="currentYear"></p>
         </div>
-        <div id="selectedProject"></div>
-      </section>
+        <h1>Work</h1>
+      </div>
+      <div id="selectedProject"></div>
+    </section>
 
-      <section class="faq h-full d-flex space-between   pl-5 pr-5">
-       
-        <div class="left">
-          <h1>FAQ</h1>
-        </div>
-        <div class="right">
-         
-          <div class="accordion">
+    <section class="faq h-full d-flex space-between   pl-5 pr-5">
+
+      <div class="left">
+        <h1>FAQ</h1>
+      </div>
+      <div class="right">
+
+        <div class="accordion">
 
           <div class="accordion-group">
             <div class="accordion-menu d-flex space-between">
-           <h4> 01. What Services Do you offer ? </h4>
-           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+              <h4> 01. What Services Do you offer ? </h4>
+              <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
             </div>
             <div class="accordion-content">
-              <h6>Our services include <span class="highlight-text">web design</span>, <span class="highlight-text">development</span>, <span class="highlight-text">website management</span>, and <span class="highlight-text">SEO</span>. We focus on creating visually appealing, functional websites that perform well, remain current, and rank higher in search engine results.</h6>  
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-menu d-flex space-between">
-           <h4> 02. How long does a typical project take? </h4>
-           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
-            </div>
-            <div class="accordion-content">
-              <h6>Project timelines vary based on requirements. Once we have all the necessary information, basic design typically takes 1 week, and development around 2 weeks, totaling approximately <span class="highlight-text">4-5 weeks</span>.</h6>  
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-menu d-flex space-between">
-           <h4> 03. What do you need from me to start a project? </h4>
-           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
-            </div>
-            <div class="accordion-content">
-              <h6>To get started, I need details about your business, including content and images if you have them. If not, I can create content and visuals for you. Your own content can often be more relatable, but I’m happy to collaborate and create together if needed.</h6>  
+              <h6>Our services include <span class="highlight-text">web design</span>, <span
+                  class="highlight-text">development</span>, <span class="highlight-text">website management</span>, and
+                <span class="highlight-text">SEO</span>. We focus on creating visually appealing, functional websites
+                that perform well, remain current, and rank higher in search engine results.
+              </h6>
             </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-menu d-flex space-between">
-           <h4> 04. How much does a project typically cost? </h4>
-           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+              <h4> 02. How long does a typical project take? </h4>
+              <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
             </div>
             <div class="accordion-content">
-              <h6>Project costs depend on the website type and specific requirements. We offer services for various website types, including e-commerce, business, personal, blog, and portfolio sites. <span class="highlight-text"><u>Contact</u></span> for a personalized quote tailored to your needs!</h6>  
+              <h6>Project timelines vary based on requirements. Once we have all the necessary information, basic design
+                typically takes 1 week, and development around 2 weeks, totaling approximately <span
+                  class="highlight-text">4-5 weeks</span>.</h6>
             </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-menu d-flex space-between">
-           <h4> 05. Can I pay you in installments ? </h4>
-           <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+              <h4> 03. What do you need from me to start a project? </h4>
+              <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
             </div>
             <div class="accordion-content">
-              <h6>Yes, payments can be split into four installments: an initial payment before design, one after design, another before development, and the final payment after development completion.</h6>  
+              <h6>To get started, I need details about your business, including content and images if you have them. If
+                not, I can create content and visuals for you. Your own content can often be more relatable, but I’m
+                happy to collaborate and create together if needed.</h6>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+              <h4> 04. How much does a project typically cost? </h4>
+              <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Project costs depend on the website type and specific requirements. We offer services for various
+                website types, including e-commerce, business, personal, blog, and portfolio sites. <span
+                  class="highlight-text"><u>Contact</u></span> for a personalized quote tailored to your needs!</h6>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-menu d-flex space-between">
+              <h4> 05. Can I pay you in installments ? </h4>
+              <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
+            </div>
+            <div class="accordion-content">
+              <h6>Yes, payments can be split into four installments: an initial payment before design, one after design,
+                another before development, and the final payment after development completion.</h6>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="archive d-flex align-center h-full">
+      <div class="d-flex">
+        <div class="top d-flex space-between">
+          <div class="archive-project d-flex center">
+            <h4>1</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>2</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>3</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>4</h4>
+          </div>
         </div>
-      </section>
-
-      <section class="archive d-flex align-center h-full">
-        
-        <div class="top d-flex space-between ">
-          <div class="archive-project"> </div>
-          <div class="archive-project"> </div>
-          <div class="archive-project"> </div>
-          <div class="archive-project"> </div>
-          
-          
-         
+        <div class="top d-flex space-between">
+          <!-- Duplicates for seamless scrolling -->
+          <div class="archive-project d-flex center">
+            <h4>1</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>2</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>3</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>4</h4>
+          </div>
         </div>
+      </div>
+      </div>
 
-        <div class="bottom d-flex space-between ">
-           <div class="archive-project"> </div>
-           <div class="archive-project"> </div>
-          <div class="archive-project"> </div>
-          <div class="archive-project"> </div>
-        
-          
-          
+      <div class="d-flex">
+        <div class="bottom d-flex space-between">
+          <div class="archive-project d-flex center">
+            <h4>1</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>2</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>3</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>4</h4>
+          </div>
         </div>
-        
-      </section>
+        <div class="bottom d-flex space-between">
+          <!-- Duplicates for seamless scrolling -->
+          <div class="archive-project d-flex center">
+            <h4>1</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>2</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>3</h4>
+          </div>
+          <div class="archive-project d-flex center">
+            <h4>4</h4>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
 
-    
-    </main>
+    <footer class="h-full d-flex center pl-5 pr-5">
+      <div class="cta-container d-flex gap50">
+        <h2>Let's Work Together</h2>
+        <div class="container d-flex align-center">
+          <div class="line"></div>
+          <div class="circle d-flex center">
+            <h6>Get in Touch</h6>
+          </div>
+        </div>
+        <div class="cta-links d-flex gap20">
+          <a class="button-secondary" target="_blank" href="mailto:villarosarohant@gmail.com">
+            <div class="email ">
+              <h6>villarosarohant@gmail.com</h6>
+            </div>
+          </a>
+          <a class="button-secondary" href="tel: +919930171430">
+            <div class="Number">
+              <h6>9930171430</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-footer d-flex space-between gap20  pl-5 pr-5">
+        <div class="left d-flex space-between gap50">
+          <p>&copy; <span class="currentYear"></span> Rohant Villarosa.</p>
+      
+        </div>
+        <div class="right d-flex space-between gap50">
+          <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/">
+            <p>LinkedIn</p>
+          </a>
+          <a target="_blank" href="https://wa.link/b3yux8">
+            <p>whatsapp</p>
+          </a>
+        </div>
+      </div>
+    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
-    <script type="module" src="./scripts/script.js"></script>
-  </body>
+
+
+
+  </main>
+
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script type="module" src="./scripts/script.js"></script>
+</body>
+
 </html>
