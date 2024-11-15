@@ -110,6 +110,16 @@ video {
   object-fit: cover;
 }
 
+.lines {
+  width: 100%;
+  height: 1px;
+  background-color: var(--white);
+}
+
+.line {
+  overflow: hidden;
+}
+
 .button-secondary {
   border: 1px solid var(--white);
   padding: 20px;
@@ -174,12 +184,17 @@ video {
   gap: 50px;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 ul {
   list-style: none;
 }
 
 .preloader {
   position: fixed;
+  background-color: var(--primary);
   z-index: 999;
   width: 100%;
 }
@@ -241,18 +256,27 @@ nav .menu-item ul li:hover {
   text-align: center;
 }
 
+.selected-work .title {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  margin-bottom: 80vh;
+}
+
 .selected-work .title .project-dates {
+  width: 20%;
   margin-bottom: 1vh;
   align-items: end;
 }
 
-.selected-work .title .project-dates .line {
-  width: 10vw;
-  border-bottom: 1px solid var(--white);
+.selected-work .title .project-dates .lines {
+  /* border-bottom: 1px solid var(--white); */
   margin-bottom: 0.8vh;
 }
 
 .project-card {
+  position: relative;
+  z-index: 2;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -409,12 +433,9 @@ footer .cta-container .circle {
   background-color: var(--primary);
 }
 
-footer .cta-container .container .line {
+footer .cta-container .container .lines {
   z-index: 1;
   position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: var(--white);
 }
 
 footer .cta-container .cta-links {
@@ -428,12 +449,12 @@ footer .bottom-footer {
   bottom: 20px;
 }
 
-/* footer .bottom-footer p {
-  text-decoration: underline;
-} */
-
 /* tablets */
 @media only screen and (max-width: 768px) {
+  /* .preloader {
+    display: none;
+  } */
+
   .selected-work .title .project-dates {
     display: none;
   }
@@ -471,9 +492,7 @@ footer .bottom-footer {
   }
 
   nav {
-    /* padding-top: 5vw; */
     height: 50px;
-    z-index: 999;
   }
 
   nav .logo {
@@ -519,6 +538,10 @@ footer .bottom-footer {
 
   .about h4 {
     width: 100vw;
+  }
+
+  .selected-work .title {
+    top: 40vh;
   }
 
   .project-card {
@@ -580,6 +603,7 @@ footer .bottom-footer {
 
   footer .bottom-footer {
     flex-wrap: wrap-reverse;
+    justify-content: center !important;
   }
 
   footer .cta-container .circle {

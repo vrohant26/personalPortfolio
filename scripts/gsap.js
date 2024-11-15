@@ -1,3 +1,6 @@
+const splitHead = new SplitType(".hero-name h1", { types: "chars" });
+const para = new SplitType(".about h4 ", { types: "lines, words" });
+
 export function mobileMenu() {
   const open = document.querySelector("#open");
   const close = document.querySelector("#close");
@@ -47,7 +50,9 @@ export function accordion() {
   let menuToggles = groups.map(createAnimation);
 
   menus.forEach((menu) => {
-    menu.addEventListener("click", () => toggleMenu(menu));
+    menu.addEventListener("click", () => {
+      toggleMenu(menu);
+    });
   });
 
   function toggleMenu(clickedMenu) {
@@ -79,9 +84,9 @@ export function accordion() {
 }
 
 export function preloader() {
-  const preloader = document.querySelector(".preloader");
-  const name = new SplitType(".hero-name h1", { types: "chars" });
+  const preloader = document.querySelector(".preloader h2");
 
+  // const tl = gsap.timeline({ paused: true });
   const tl = gsap.timeline();
 
   tl.from(".preloader .counter", {
@@ -97,27 +102,34 @@ export function preloader() {
     {
       opacity: 0,
       delay: 1,
-      duration: 1,
+      duration: 0.5,
       onComplete: () => {
         document.querySelector("nav").style.zIndex = "999";
-        preloader.style.display = "none";
+        document.querySelector(".preloader").style.display = "none";
       },
     },
     "-=1"
   );
 
-  tl.from(".logo", {
-    scale: 300,
-    duration: 1,
-  });
+  tl.from(
+    ".logo",
+    {
+      scale: 300,
+      ease: "expo.inOut",
+      duration: 2,
+    },
+    "-=1"
+  );
 
   tl.from(
-    name.chars,
+    splitHead.chars,
     {
       yPercent: 100,
-      stagger: -0.012,
+      stagger: -0.009,
+      duration: 1,
+      ease: "expo.inOut",
     },
-    "-=0.5"
+    "-=1.2"
   );
 
   tl.from(
@@ -125,10 +137,10 @@ export function preloader() {
     {
       opacity: 0,
       xPercent: 50,
-      duration: 0.5,
+      duration: 1,
       stagger: -0.05,
     },
-    "-=0.5"
+    "-=1"
   );
 
   tl.from(
@@ -136,9 +148,103 @@ export function preloader() {
     {
       opacity: 0,
       yPercent: 50,
-      duration: 0.5,
+      duration: 1,
       stagger: 0.5,
     },
-    "-=0.5"
+    "-=1"
   );
+}
+
+export function textUp() {
+  gsap.from(para.words, {
+    yPercent: 100,
+    duration: 1,
+    stagger: 0.005,
+    ease: "expo.inOut",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 50%",
+      toggleActions: "play none none reset",
+    },
+  });
+}
+
+export function headingAnimation() {
+  const splitText = new SplitType(".animate-text", { types: "chars" });
+
+  gsap.utils.toArray(".animate-text").forEach((text) => {
+    gsap.from(text.querySelectorAll(".char"), {
+      yPercent: 120,
+      stagger: 0.05,
+      duration: 1.5,
+      ease: "expo.inOut",
+      scrollTrigger: {
+        trigger: text,
+        start: "top 95%",
+      },
+    });
+  });
+}
+
+export function fadeUp() {
+  gsap.utils.toArray(".fade-up").forEach((container) => {
+    gsap.from(container, {
+      opacity: 0,
+      yPercent: 10,
+      duration: 1,
+      scrollTrigger: {
+        trigger: container,
+        start: "top 30%",
+      },
+    });
+  });
+}
+
+export function lineAnimation() {
+  gsap.utils.toArray(".lines").forEach((line) => {
+    gsap.from(line, {
+      opacity: 0,
+      width: "0%",
+      duration: 1,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: line,
+        start: "top 100%",
+      },
+    });
+  });
+}
+
+export function snapProjects() {
+  // Create ScrollTrigger for each new project-card
+  document.querySelectorAll(".project-card").forEach((card, index) => {
+    ScrollTrigger.create({
+      trigger: card,
+      start: "top top", // Start snapping when the card reaches the top
+      end: "bottom 60%", // End snapping when the card leaves the viewport
+      scrub: true, // Smooth animation
+      pin: true, // Pin the card in place during snapping
+      pinSpacing: true, // Ensure pinned elements don't shift layout
+
+      snap: {
+        snapTo: "start", // Snap to the start of each card
+        // duration: 0.1,
+      },
+    });
+  });
+}
+
+export function selecedProjectAnimation() {
+  const projectDisplay = document.querySelectorAll(".project-display");
+
+  projectDisplay.forEach((video) => {
+    gsap.from(video, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: video,
+        start: "top 70%",
+      },
+    });
+  });
 }

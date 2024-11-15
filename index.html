@@ -10,10 +10,11 @@
 
 <body data-barba="wrapper">
 
-<div class="preloader h-full d-flex center">
+  <div class="preloader h-full d-flex center">
     <h2><span class="counter">100</span>%</h2>
-    
 </div>
+
+<div class="cursor"></div>
 
   <nav id="nav" class="d-flex align-center space-between pl-5 pr-5">
     <div class="logo"></div>
@@ -47,7 +48,7 @@
 
   <main data-barba="container" data-barba-namespace="home">
 
-    <section class="hero d-flex   pl-5 pr-5">
+    <section class="hero d-flex pl-5 pr-5">
       <div class="hero-name d-flex space-between">
         <h1>Rohant</h1>
         <h1>Villarosa</h1>
@@ -73,30 +74,34 @@
     </section>
 
     <section class="selected-work">
-      <div class="title d-flex space-between pl-5 pr-5 mb-10">
-        <h1>Selected</h1>
-        <div class="project-dates align-center gap20 d-flex">
+
+      <div class="title overflow-hidden d-flex space-between  pl-5 pr-5 mb-10">
+        <h1 class="animate-text">Selected</h1>
+        <div class="project-dates  align-center gap20 d-flex">
           <p>2022</p>
-          <div class="line"></div>
+          <div class="lines"></div>
           <p class="currentYear"></p>
         </div>
-        <h1>Work</h1>
+        <h1 class="animate-text">Work</h1>
       </div>
+  
       <div id="selectedProject"></div>
     </section>
 
-    <section class="faq h-full d-flex space-between   pl-5 pr-5">
+    <section class="faq fade-up h-full d-flex space-between   pl-5 pr-5">
 
-      <div class="left">
+      <div class="left ">
         <h1>FAQ</h1>
       </div>
       <div class="right">
 
-        <div class="accordion">
+        <div class="accordion ">
 
           <div class="accordion-group">
             <div class="accordion-menu d-flex space-between">
+            
               <h4> 01. What Services Do you offer ? </h4>
+          
               <img src="./assets/plus-large-svgrepo-com.svg" alt="plus">
             </div>
             <div class="accordion-content">
@@ -224,11 +229,13 @@
 
     <footer class="h-full d-flex center pl-5 pr-5">
       <div class="cta-container d-flex gap50">
-        <h2>Let's Work Together</h2>
+        <div class="overflow-hidden">
+        <h1 class="animate-text">Get in touch</h1>
+        </div>
         <div class="container d-flex align-center">
-          <div class="line"></div>
+          <div class="lines"></div>
           <div class="circle d-flex center">
-            <h6>Get in Touch</h6>
+            <h6>Say hello</h6>
           </div>
         </div>
         <div class="cta-links d-flex gap20">

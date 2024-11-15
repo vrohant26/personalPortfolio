@@ -1,3 +1,9 @@
+import {
+  selecedProjectAnimation,
+  snapProjects,
+  fadeUp,
+} from "../scripts/gsap.js";
+
 export function addProject() {
   const selectedProject = document.getElementById("selectedProject");
 
@@ -15,8 +21,8 @@ export function addProject() {
           <div class="bottom d-flex space-between">
             <div class="project-details">
               <div class="project-service "><h6>${data.projectService}</h6></div>
-              <div class="project-name"><h2>${data.projectName}</h2></div>
-            </div>
+              <div class="project-name fade-up "><h2>${data.projectName}</h2></div>
+            </div> 
             <div class="project-display">
               <!-- video  -->
             </div>
@@ -24,7 +30,12 @@ export function addProject() {
        </div>`;
 
         selectedProject.innerHTML += projectHTML;
+        snapProjects();
       });
+    })
+    .then(() => {
+      selecedProjectAnimation();
+      ScrollTrigger.refresh();
     })
     .catch((error) => console.error("Error:", error));
 }
