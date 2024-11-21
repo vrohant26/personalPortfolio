@@ -168,6 +168,14 @@ video {
   padding-bottom: 2vw;
 }
 
+.pt-10 {
+  padding-top: 10vw;
+}
+
+.pb-10 {
+  padding-bottom: 10vw;
+}
+
 .pxy {
   padding: 5vw 2vw;
 }
@@ -200,6 +208,7 @@ ul {
 }
 
 nav {
+  z-index: 997;
   height: 50px;
   position: fixed;
   background-color: var(--background);
@@ -208,6 +217,7 @@ nav {
 }
 
 nav .logo {
+  z-index: 998;
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50px;
@@ -306,7 +316,17 @@ nav .menu-item ul li:hover {
 .project-card .bottom .project-display {
   background-color: var(--transparent);
   height: 40vh;
-  width: 30vw;
+  width: 40vw;
+}
+
+.project-card .bottom .project-display video {
+  width: 95%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.project-name {
+  overflow: hidden;
 }
 
 .faq {
@@ -315,7 +335,7 @@ nav .menu-item ul li:hover {
 
 .faq .left,
 .faq .right {
-  height: 65vh;
+  height: 50%;
 }
 
 .faq .left h1 {
@@ -358,9 +378,15 @@ nav .menu-item ul li:hover {
 }
 
 .archive {
+  position: relative;
   flex-direction: column;
   overflow: hidden;
-  gap: 50px;
+}
+
+.archive .upper,
+.archive .lower {
+  background-color: var(--background);
+  z-index: 3;
 }
 
 .archive .top {
@@ -381,13 +407,13 @@ nav .menu-item ul li:hover {
 
 .archive .top {
   margin-left: 50px;
-  animation: scroll-right 100s linear infinite;
+  animation: scroll-right 20s linear infinite;
 }
 
 /* Infinite scrolling effect: Bottom section moves left */
 .archive .bottom {
   margin-left: 50px;
-  animation: scroll-left 100s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 
 /* Keyframes for scrolling right */
@@ -412,11 +438,14 @@ nav .menu-item ul li:hover {
 
 footer {
   background-color: var(--dark-primary);
-  position: relative;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 footer .cta-container {
   /* gap: 20px; */
+  overflow: hidden;
   flex-direction: column;
   position: relative;
   /* align-content: end; */
@@ -449,12 +478,55 @@ footer .bottom-footer {
   bottom: 20px;
 }
 
+.footer-animation {
+  position: relative;
+}
+
+#singleProject .hero-content {
+  width: 100%;
+  flex-grow: 1;
+}
+
+#singleProject .hero-name .project-details {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: space-around;
+}
+#singleProject .hero-name .project-details p {
+  border-bottom: 1px solid var(--transparent);
+  padding: 10px;
+}
+
+#singleProject .mockup {
+  flex-direction: column;
+  gap: 5vw;
+}
+
+#singleProject .mockup .mobile-view {
+  width: 30%;
+  height: 60vh;
+  background-color: var(--white);
+}
+
+#singleProject .next-project {
+  flex-direction: column;
+}
+
+#singleProject .desc {
+  justify-content: end;
+}
+
+#singleProject .desc h4 {
+  text-align: start;
+}
+
+.container {
+  width: 70%;
+}
+
 /* tablets */
 @media only screen and (max-width: 768px) {
-  /* .preloader {
-    display: none;
-  } */
-
   .selected-work .title .project-dates {
     display: none;
   }
@@ -549,6 +621,7 @@ footer .bottom-footer {
   }
 
   .project-card .top {
+    margin-top: 50px;
     flex-direction: column;
   }
   .project-card .bottom {
@@ -598,7 +671,7 @@ footer .bottom-footer {
 
   .archive .archive-project {
     width: 300px;
-    height: 150px;
+    height: 250px;
   }
 
   footer .bottom-footer {
@@ -607,8 +680,8 @@ footer .bottom-footer {
   }
 
   footer .cta-container .circle {
-    width: 40vw;
-    height: 40vw;
+    width: 35vw;
+    height: 35vw;
   }
   footer .bottom-footer .left,
   footer .bottom-footer .right {
@@ -619,5 +692,40 @@ footer .bottom-footer {
     width: 100%;
     margin-top: 20px;
     flex-wrap: wrap;
+  }
+
+  #singleProject .hero-name {
+    flex-direction: column;
+    gap: 5vw;
+  }
+  #singleProject .hero-name h1 {
+    text-align: center;
+  }
+
+  #singleProject .about {
+    height: 50vh !important;
+  }
+
+  #singleProject .hero-name .project-details {
+    width: 100%;
+  }
+
+  #singleProject .mockup .video-container {
+    height: 50vh;
+  }
+
+  #singleProject .mockup .mobile-view {
+    width: 100%;
+    height: 50vh;
+  }
+
+  #singleProject .next-project {
+    height: 50vh !important;
+  }
+
+  .container {
+    gap: 5vw;
+    flex-direction: column;
+    width: 100%;
   }
 }

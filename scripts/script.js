@@ -1,4 +1,4 @@
-import { intiBarba } from "./barba.js";
+import { leaveAnimation, enterAnimation } from "./barba.js";
 import {
   mobileMenu,
   accordion,
@@ -7,7 +7,9 @@ import {
   headingAnimation,
   lineAnimation,
   fadeUp,
+  openAnimation,
 } from "./gsap.js";
+
 import { addProject } from "../components/components.js";
 
 function smoothScroll() {
@@ -55,15 +57,97 @@ function navbar() {
   });
 }
 
-fadeUp();
-headingAnimation();
-lineAnimation();
-textUp();
-preloader();
-accordion();
-navbar();
-mobileMenu();
-getCurrentYear();
+export const intiBarba = () => {
+  // function delay(n) {
+  //   n = n || 2000;
+  //   return new Promise((done) => {
+  //     setTimeout(() => {
+  //       done();
+  //     }, n);
+  //   });
+  // }
+
+  barba.init({
+    async: true,
+    transitions: [
+      {
+        name: "opacity-transition",
+        async leave(data) {
+          // const done = this.async();
+          return leaveAnimation(data);
+          // await delay(50);
+          // done();
+        },
+
+        async afterLeave() {
+          ScrollTrigger.getAll().forEach((t) => t.kill());
+          ScrollTrigger.refresh(true);
+        },
+
+        async enter(data) {
+          const video = data.next.container.querySelectorAll("video");
+          ScrollTrigger.refresh(true);
+          video.forEach((vid) => {
+            if (vid) {
+              vid.play();
+            }
+          });
+
+          window.scroll(0, 0);
+          enterAnimation(data);
+        },
+
+        async once() {
+          preloader();
+        },
+      },
+      {
+        name: "single-project-transition",
+        async leave(data) {
+          return;
+        },
+        async enter(data) {
+          return;
+        },
+      },
+    ],
+    views: [
+      {
+        namespace: "home",
+        beforeEnter() {
+          addProject();
+          ScrollTrigger.refresh(true);
+        },
+        afterEnter() {
+          setTimeout(() => {
+            fadeUp();
+            headingAnimation();
+            lineAnimation();
+            textUp();
+            accordion();
+            getCurrentYear();
+            openAnimation();
+            navbar();
+            mobileMenu();
+          }, 50);
+        },
+      },
+      {
+        namespace: "single-project",
+        beforeEnter() {
+          setTimeout(() => {
+            openAnimation();
+            textUp();
+            navbar();
+            mobileMenu();
+          }, 50);
+        },
+      },
+    ],
+  });
+};
+
+// snapProjects();
+
 smoothScroll();
 intiBarba();
-addProject();

@@ -24,7 +24,7 @@
       "count": "03/04",
       "backgroundColor": "#8E3E0B",
       "projectName": "ThynkDifferent",
-      "projectVideoLink": "video2.mp4",
+      "projectVideoLink": "./assets/Projects/Thynkdifferent/preview.mp4 ",
       "projectService": "Design | development | Low code | CMS",
       "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
     },

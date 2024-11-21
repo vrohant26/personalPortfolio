@@ -1,5 +1,4 @@
 const splitHead = new SplitType(".hero-name h1", { types: "chars" });
-const para = new SplitType(".about h4 ", { types: "lines, words" });
 
 export function mobileMenu() {
   const open = document.querySelector("#open");
@@ -156,6 +155,7 @@ export function preloader() {
 }
 
 export function textUp() {
+  const para = new SplitType(".about h4 ", { types: "lines, words" });
   gsap.from(para.words, {
     yPercent: 100,
     duration: 1,
@@ -163,7 +163,7 @@ export function textUp() {
     ease: "expo.inOut",
     scrollTrigger: {
       trigger: ".about",
-      start: "top 50%",
+      start: "top 90%",
       toggleActions: "play none none reset",
     },
   });
@@ -175,7 +175,7 @@ export function headingAnimation() {
   gsap.utils.toArray(".animate-text").forEach((text) => {
     gsap.from(text.querySelectorAll(".char"), {
       yPercent: 120,
-      stagger: 0.05,
+      stagger: 0.012,
       duration: 1.5,
       ease: "expo.inOut",
       scrollTrigger: {
@@ -228,7 +228,6 @@ export function snapProjects() {
 
       snap: {
         snapTo: "start", // Snap to the start of each card
-        // duration: 0.1,
       },
     });
   });
@@ -236,15 +235,81 @@ export function snapProjects() {
 
 export function selecedProjectAnimation() {
   const projectDisplay = document.querySelectorAll(".project-display");
+  const projectName = document.querySelectorAll(".project-name h2");
+  const projectDescription = document.querySelectorAll(
+    ".project-card .description, .project-card .count"
+  );
 
-  projectDisplay.forEach((video) => {
-    gsap.from(video, {
+  projectDescription.forEach((desc) => {
+    gsap.from(desc, {
       opacity: 0,
-      duration: 1,
+      duration: 2,
+      delay: 0.5,
       scrollTrigger: {
-        trigger: video,
-        start: "top 70%",
+        trigger: desc,
+        start: "top 100%",
       },
     });
   });
+  projectDisplay.forEach((video) => {
+    gsap.from(video, {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      duration: 1,
+      ease: "expo.inOut",
+      scrollTrigger: {
+        trigger: video,
+        start: "top 100%",
+      },
+    });
+  });
+  projectName.forEach((name) => {
+    const splitProjectName = new SplitType(name, { types: "chars" });
+
+    gsap.from(splitProjectName.chars, {
+      yPercent: 120,
+      duration: 1,
+      ease: "expo.inOut",
+      stagger: 0.012,
+      scrollTrigger: {
+        trigger: name,
+        start: "top 100%",
+      },
+    });
+  });
+}
+
+export function openAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer-animation",
+      start: "top top",
+
+      pin: true,
+      scrub: true,
+    },
+  });
+
+  tl.to(
+    ".upper",
+    {
+      yPercent: -120,
+    },
+    "a"
+  );
+  tl.to(
+    ".lower",
+    {
+      yPercent: 120,
+    },
+    "a"
+  );
+
+  tl.from(
+    "footer .cta-container",
+    {
+      scale: 1.5,
+    },
+    "a"
+  );
 }
