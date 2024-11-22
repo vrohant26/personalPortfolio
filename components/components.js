@@ -9,7 +9,9 @@ export function addProject() {
       const selectedWorksData = json.selectedWorks;
 
       selectedWorksData.forEach((data) => {
-        const projectHTML = `<div style="background-color : ${data.backgroundColor}" class=" project-card pl-5 pr-5 pb-5 pt-5 project-${data.id} d-flex  h-full">
+        const projectHTML = `
+        <a href = "../singleProject.html?id=${data.id}">
+        <div style="background-color : ${data.backgroundColor}" class=" project-card pl-5 pr-5 pb-5 pt-5 project-${data.id} d-flex  h-full">
           <div class="top d-flex space-between">
             <div class="count"><h2>${data.count}</h2></div>
             <div class="description"><h6>${data.description}</h6></div>
@@ -23,7 +25,8 @@ export function addProject() {
                 <video autoplay muted loop playsinline src="${data.projectVideoLink}"></video>
             </div>
           </div>
-       </div>`;
+       </div>
+       </a>`;
 
         selectedProject.innerHTML += projectHTML;
       });

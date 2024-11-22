@@ -11,6 +11,7 @@ import {
 } from "./gsap.js";
 
 import { addProject } from "../components/components.js";
+import { singlePageData } from "../components/singleProject.js";
 
 function smoothScroll() {
   const lenis = new Lenis();
@@ -98,18 +99,18 @@ export const intiBarba = () => {
         },
 
         async once() {
-          preloader();
+          // preloader();
         },
       },
-      {
-        name: "single-project-transition",
-        async leave(data) {
-          return;
-        },
-        async enter(data) {
-          return;
-        },
-      },
+      // {
+      //   name: "single-project-transition",
+      //   async leave(data) {
+      //     return;
+      //   },
+      //   async enter(data) {
+      //     return;
+      //   },
+      // },
     ],
     views: [
       {
@@ -127,7 +128,7 @@ export const intiBarba = () => {
             accordion();
             getCurrentYear();
             openAnimation();
-            navbar();
+            // navbar();
             mobileMenu();
           }, 50);
         },
@@ -138,8 +139,9 @@ export const intiBarba = () => {
           setTimeout(() => {
             openAnimation();
             textUp();
-            navbar();
+            // navbar();
             mobileMenu();
+            singlePageData();
           }, 50);
         },
       },

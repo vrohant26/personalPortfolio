@@ -208,12 +208,13 @@ ul {
 }
 
 nav {
-  z-index: 997;
   height: 50px;
   position: fixed;
-  background-color: var(--background);
+  z-index: 997;
+  /* background-color: var(--background); */
   top: 0%;
   width: 100vw;
+  /* mix-blend-mode: difference; */
 }
 
 nav .logo {
@@ -314,14 +315,11 @@ nav .menu-item ul li:hover {
 }
 
 .project-card .bottom .project-display {
-  background-color: var(--transparent);
   height: 40vh;
-  width: 40vw;
+  width: 35vw;
 }
 
 .project-card .bottom .project-display video {
-  width: 95%;
-  height: 90%;
   object-fit: contain;
 }
 
@@ -485,6 +483,21 @@ footer .bottom-footer {
 #singleProject .hero-content {
   width: 100%;
   flex-grow: 1;
+}
+
+#singleProject .hero-content video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  /* object-fit: contain; */
+}
+
+#singleProject .hero-name {
+  position: relative;
+  z-index: 5;
+  mix-blend-mode: difference;
 }
 
 #singleProject .hero-name .project-details {
