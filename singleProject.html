@@ -49,14 +49,22 @@
 
     
    
-       <section class="hero d-flex pl-5 pr-5">
-     
-      <div class="hero-content">
+       <section class="hero  d-flex pl-5 pr-5 mb-10">
+      <div class="hero-name align-center pb-5 d-flex space-between">
+        <div class="left d-flex">
+          <h6 onclick="goBack()"><u>Go back</u></h6>
+          <h2 id="projectName"></h2>
+        </div>
+       <a id="link" class="overflow-hidden" href="" target="_blank"> <img src="./assets/right-arrow (1).png" alt="right-arrow"></a>
+    </div>
+      <div class="hero-content gap20 pt-5 d-flex space-between">
         <video id="preview" autoplay muted loop playsinline ></video>
-      </div>
-      <div class="hero-name align-center d-flex space-between">
-        <h2 id="projectName"></h2>
-        <div class="project-details">
+
+        <div class="project-info d-flex flex-column space-between">
+          <div class="project-desc">
+            <h6></h6>
+          </div>
+         <div class="project-details">
             <p class="d-flex space-between"><b>Year :</b>  2024</p>
             <p class="d-flex space-between"><b>Role :</b>  Design, Development</p>
             <p class="d-flex space-between"><b>services :</b>  content management, seo, custom theme</p>
@@ -64,24 +72,22 @@
             <p class="d-flex space-between"><b>url :</b> portfolio.com</p>
 
         </div>
-    </div>
-    </section>
-
-    <section class="about pt-10 pb-10 desc pl-5 pr-5 d-flex">
-      <h4>Hi there! I’m Rohant, a freelance <span class="highlight-text">web designer</span> and <span
-          class="highlight-text">developer</span> with a passion for creating clean, beautiful designs. I specialize in
-        crafting interactive websites that not only look stunning but also engage and delight users. My mission is to
-        transform your ideas into digital experiences that are easy to navigate and fun to explore.</h4>
+        <a id="link" href="" target="_blank"><div class="button-secondary">
+          <p>visit site</p>
+        </div></a>
+        </div>
+      </div>
     </section>
 
 
-    <section class="mockup d-flex pl-5 pr-5 center">
+
+    <section class="mockup  d-flex  center">
        
-            <div class="video-container">
-                <video autoplay muted loop playsinline src="https://strapi-cms-3mz0.onrender.com/uploads/240123_Milk_Video_2024_Low_V2_8abec16071.mp4"></video>
+            <div class="video-container mb-10">
+                <video id="video1" autoplay muted loop playsinline ></video>
             </div>
-            <div class="video-container">
-                <video autoplay muted loop playsinline src="https://strapi-cms-3mz0.onrender.com/uploads/240123_Milk_Video_2024_Low_V2_8abec16071.mp4"></video>
+            <div class="video-container mb-10">
+                <video id="video2" autoplay muted loop playsinline ></video>
             </div>
             <div class="container d-flex space-between">
                 <div class="mobile-view "></div>
@@ -222,7 +228,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@barba/core"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script type="module" src="./scripts/script.js"></script>
+  <script type="module" src="./scripts/script.js" defer></script>
 </body>
 
 </html>

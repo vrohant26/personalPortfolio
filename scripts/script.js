@@ -58,6 +58,14 @@ function navbar() {
   });
 }
 
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back(); // Goes back to the previous page in the browsing history.
+  } else {
+    window.location.href = "/"; // Redirects to a default page if there's no history.
+  }
+}
+
 export const intiBarba = () => {
   // function delay(n) {
   //   n = n || 2000;
@@ -87,13 +95,12 @@ export const intiBarba = () => {
 
         async enter(data) {
           const video = data.next.container.querySelectorAll("video");
-          ScrollTrigger.refresh(true);
+
           video.forEach((vid) => {
             if (vid) {
               vid.play();
             }
           });
-
           window.scroll(0, 0);
           enterAnimation(data);
         },
@@ -102,15 +109,6 @@ export const intiBarba = () => {
           // preloader();
         },
       },
-      // {
-      //   name: "single-project-transition",
-      //   async leave(data) {
-      //     return;
-      //   },
-      //   async enter(data) {
-      //     return;
-      //   },
-      // },
     ],
     views: [
       {
@@ -136,11 +134,14 @@ export const intiBarba = () => {
       {
         namespace: "single-project",
         beforeEnter() {
+          console.log("entered");
+
           setTimeout(() => {
             openAnimation();
-            textUp();
+
             // navbar();
             mobileMenu();
+
             singlePageData();
           }, 50);
         },
@@ -149,7 +150,6 @@ export const intiBarba = () => {
   });
 };
 
-// snapProjects();
-
 smoothScroll();
 intiBarba();
+window.goBack = goBack;

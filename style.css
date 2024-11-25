@@ -122,7 +122,7 @@ video {
 
 .button-secondary {
   border: 1px solid var(--white);
-  padding: 20px;
+  padding: 15px 0px;
   border-radius: 50px;
   width: 100%;
   display: flex;
@@ -144,6 +144,10 @@ video {
 
 .d-flex {
   display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .align-center {
@@ -315,12 +319,8 @@ nav .menu-item ul li:hover {
 }
 
 .project-card .bottom .project-display {
-  height: 40vh;
-  width: 35vw;
-}
-
-.project-card .bottom .project-display video {
-  object-fit: contain;
+  height: 50vh;
+  width: 45vw;
 }
 
 .project-name {
@@ -480,46 +480,51 @@ footer .bottom-footer {
   position: relative;
 }
 
+#singleProject .hero .hero-name .left {
+  align-items: end;
+  gap: 5vw;
+}
+
+#singleProject .hero .hero-name .left h6 {
+  cursor: pointer;
+}
+
 #singleProject .hero-content {
-  width: 100%;
+  border-top: 1px solid var(--transparent);
   flex-grow: 1;
+  width: 100%;
 }
 
 #singleProject .hero-content video {
-  top: 0;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  /* object-fit: contain; */
+  width: 60%;
 }
 
-#singleProject .hero-name {
-  position: relative;
-  z-index: 5;
-  mix-blend-mode: difference;
-}
-
-#singleProject .hero-name .project-details {
+#singleProject .hero-content .project-details {
   display: flex;
+
   flex-direction: column;
-  width: 40%;
-  justify-content: space-around;
 }
-#singleProject .hero-name .project-details p {
+#singleProject .hero-content .project-details p {
   border-bottom: 1px solid var(--transparent);
-  padding: 10px;
+  padding: 10px 0;
 }
 
 #singleProject .mockup {
   flex-direction: column;
-  gap: 5vw;
+  width: 80%;
+  margin: auto;
+
+  /* gap: 5vw; */
 }
 
 #singleProject .mockup .mobile-view {
   width: 30%;
   height: 60vh;
   background-color: var(--white);
+}
+
+#singleProject .project-info .button-secondary {
+  width: 20%;
 }
 
 #singleProject .next-project {
@@ -534,8 +539,13 @@ footer .bottom-footer {
   text-align: start;
 }
 
+#singleProject .hero-name img {
+  width: 10vw;
+  transform: rotate(-45deg);
+}
+
 .container {
-  width: 70%;
+  width: 100%;
 }
 
 /* tablets */

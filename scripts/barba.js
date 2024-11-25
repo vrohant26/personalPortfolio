@@ -15,5 +15,8 @@ export const enterAnimation = (data) => {
     scale: 200,
     ease: "expo.inOut",
     duration: 1,
+    onComplete: () => {
+      ScrollTrigger.refresh(true);
+    },
   });
 };

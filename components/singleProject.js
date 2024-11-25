@@ -20,6 +20,16 @@ export function singlePageData() {
           .forEach((element) => {
             element.style.backgroundColor = project.backgroundColor;
           });
+
+        document.querySelector(".project-desc h6").textContent =
+          project.description;
+
+        document.querySelectorAll("#link").forEach((link) => {
+          link.href = `https://${project.url}`;
+        });
+
+        document.getElementById("video1").src = project.video1;
+        document.getElementById("video2").src = project.video2;
       }
     });
 }
