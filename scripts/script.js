@@ -1,4 +1,9 @@
-import { leaveAnimation, enterAnimation } from "./barba.js";
+import {
+  leaveAnimation,
+  enterAnimation,
+  defaultLeave,
+  defaultEnter,
+} from "./barba.js";
 import {
   mobileMenu,
   accordion,
@@ -67,33 +72,32 @@ function goBack() {
 }
 
 export const intiBarba = () => {
-  // function delay(n) {
-  //   n = n || 2000;
-  //   return new Promise((done) => {
-  //     setTimeout(() => {
-  //       done();
-  //     }, n);
-  //   });
-  // }
-
   barba.init({
-    async: true,
+    sync: true,
     transitions: [
       {
         name: "opacity-transition",
-        async leave(data) {
-          // const done = this.async();
-          return leaveAnimation(data);
-          // await delay(50);
-          // done();
+        from: { namespace: "home" },
+        to: { namespace: "single-project" },
+        leave() {
+          return leaveAnimation();
         },
 
-        async afterLeave() {
-          ScrollTrigger.getAll().forEach((t) => t.kill());
-          ScrollTrigger.refresh(true);
+        enter() {
+          window.scroll(0, 0);
+          enterAnimation();
         },
 
-        async enter(data) {
+        once() {
+          // preloader();
+        },
+      },
+      {
+        name: "default-transition",
+        leave(data) {
+          return defaultLeave(data);
+        },
+        enter(data) {
           const video = data.next.container.querySelectorAll("video");
 
           video.forEach((vid) => {
@@ -101,12 +105,7 @@ export const intiBarba = () => {
               vid.play();
             }
           });
-          window.scroll(0, 0);
-          enterAnimation(data);
-        },
-
-        async once() {
-          // preloader();
+          defaultEnter(data);
         },
       },
     ],
@@ -134,8 +133,6 @@ export const intiBarba = () => {
       {
         namespace: "single-project",
         beforeEnter() {
-          console.log("entered");
-
           setTimeout(() => {
             openAnimation();
 

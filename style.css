@@ -122,7 +122,7 @@ video {
 
 .button-secondary {
   border: 1px solid var(--white);
-  padding: 15px 0px;
+  padding: 15px 10px;
   border-radius: 50px;
   width: 100%;
   display: flex;
@@ -435,7 +435,7 @@ nav .menu-item ul li:hover {
 }
 
 footer {
-  background-color: var(--dark-primary);
+  background-color: var(--background);
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -480,6 +480,10 @@ footer .bottom-footer {
   position: relative;
 }
 
+#singleProject {
+  /* background-color: var(--dark-primary); */
+}
+
 #singleProject .hero .hero-name .left {
   align-items: end;
   gap: 5vw;
@@ -511,16 +515,19 @@ footer .bottom-footer {
 
 #singleProject .mockup {
   flex-direction: column;
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
-
-  /* gap: 5vw; */
 }
 
-#singleProject .mockup .mobile-view {
-  width: 30%;
-  height: 60vh;
-  background-color: var(--white);
+#singleProject .mockup .video-container {
+  width: 70vw;
+  background-color: var(--transparent);
+  border-radius: 10px;
+}
+
+#singleProject .mockup .mobile-view img {
+  /* border-radius: 20px; */
+  object-fit: contain;
 }
 
 #singleProject .project-info .button-secondary {
@@ -542,10 +549,6 @@ footer .bottom-footer {
 #singleProject .hero-name img {
   width: 10vw;
   transform: rotate(-45deg);
-}
-
-.container {
-  width: 100%;
 }
 
 /* tablets */

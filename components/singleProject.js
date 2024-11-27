@@ -12,6 +12,7 @@ export function singlePageData() {
       );
 
       if (project) {
+        ScrollTrigger.refresh(true);
         document.getElementById("projectName").textContent =
           project.projectName;
         document.getElementById("preview").src = project.projectVideoLink;
@@ -30,6 +31,9 @@ export function singlePageData() {
 
         document.getElementById("video1").src = project.video1;
         document.getElementById("video2").src = project.video2;
+        document.querySelector("#mobile1 img").src = project.mobile1;
+        document.querySelector("#mobile2 img").src = project.mobile2;
+        document.querySelector("#mobile3 img").src = project.mobile3;
       }
     });
 }

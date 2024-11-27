@@ -12,8 +12,11 @@
       "projectName": "Portfolio",
       "projectVideoLink": "./assets/Projects/Roshni's Portfolio/preview.mp4",
       "projectService": "Design | Development | Low Code",
-      "video1": "./assets/Projects/Roshni's Portfolio/mockup full page.mp4",
-      "video2": "./assets/Projects/Roshni's Portfolio/entrance animation.mp4",
+      "video2": "./assets/Projects/Roshni's Portfolio/mockup full page.mp4",
+      "video1": "./assets/Projects/Roshni's Portfolio/entrance animation 1.mp4",
+      "mobile1": "./assets/Projects/Roshni's Portfolio/mobile hero.png",
+      "mobile2": "./assets/Projects/Roshni's Portfolio/mobile single product.png",
+      "mobile3": "./assets/Projects/Roshni's Portfolio/mobile work section.png",
       "description": "This portfolio website was crafted specifically for a social media manager aiming to impress recruiters. Interactive elements and an intuitive layout make it easy for recruiters to navigate, quickly get a sense of the manager's expertise, and see the impact of their work at a glance."
     },
     {
@@ -25,6 +28,9 @@
       "projectService": "Development | Low code | CMS",
       "video1": "",
       "video2": "",
+      "mobile1": "./assets/Projects/Roshni's Portfolio/mobile hero.png",
+      "mobile2": "./assets/Projects/Roshni's Portfolio/mobile single product.png",
+      "mobile3": "./assets/Projects/Roshni's Portfolio/mobile work section.png",
       "description": "I created a professional and user-centric website for Brand Institute, a leader in brand name development and identity for the healthcare and consumer sectors. The redesign focused on enhancing user experience and showcasing Brand Institute’s impressive portfolio, including high-profile pharmaceutical and consumer brands."
     },
     {
@@ -34,8 +40,11 @@
       "projectName": "ThynkDifferent",
       "projectVideoLink": "./assets/Projects/Thynkdifferent/preview.mp4 ",
       "projectService": "Design | development | Low code | CMS",
-      "video1": "",
-      "video2": "",
+      "video1": "./assets/Projects/Thynkdifferent/entrance.mp4",
+      "video2": "./assets/Projects/Thynkdifferent/full page.mp4",
+      "mobile1": "./assets/Projects/Thynkdifferent/mobile-hero.png",
+      "mobile2": "./assets/Projects/Thynkdifferent/mobile-about.png",
+      "mobile3": "./assets/Projects/Thynkdifferent/mobile-howitworks.png",
       "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
     },
     {
@@ -47,6 +56,9 @@
       "projectService": "Design | development | Full Code",
       "video1": "",
       "video2": "",
+      "mobile1": "./assets/Projects/Roshni's Portfolio/mobile hero.png",
+      "mobile2": "./assets/Projects/Roshni's Portfolio/mobile single product.png",
+      "mobile3": "./assets/Projects/Roshni's Portfolio/mobile work section.png",
       "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
     }
   ]
