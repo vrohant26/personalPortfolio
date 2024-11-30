@@ -18,7 +18,7 @@
   <main id="singleProject" data-barba="container" data-barba-namespace="single-project">
 
   <nav id="nav" class="d-flex align-center space-between pl-5 pr-5">
-    <div class="logo"></div>
+   <a href="/"> <div class="logo"></div></a>
     <div class="menu-item">
       <ul class="d-flex gap20">
         <li><a href="/">home</li></a>
@@ -50,7 +50,7 @@
     
    
        <section class="hero  d-flex pl-5 pr-5 mb-10">
-      <div class="hero-name align-center pb-5 d-flex space-between">
+      <div class="hero-name  pb-5 d-flex space-between">
         <div class="left d-flex">
           <a href="/"><h6><u>Go back</u></h6></a>
           <h2 id="projectName"></h2>
@@ -58,24 +58,27 @@
        <a id="link" class="overflow-hidden" href="" target="_blank"> <img src="./assets/right-arrow (1).png" alt="right-arrow"></a>
     </div>
       <div class="hero-content gap20 pt-5 d-flex space-between">
-        <video id="preview" autoplay muted loop playsinline ></video>
-
-        <div class="project-info d-flex flex-column space-between">
+         <div class="project-info d-flex flex-column space-between">
           <div class="project-desc">
             <h6></h6>
           </div>
          <div class="project-details">
-            <p class="d-flex space-between"><b>Year :</b>  2024</p>
-            <p class="d-flex space-between"><b>Role :</b>  Design, Development</p>
-            <p class="d-flex space-between"><b>services :</b>  content management, seo, custom theme</p>
-            <p class="d-flex space-between"><b>platform :</b> wordpress, elementor</p>
-            <p class="d-flex space-between"><b>url :</b> portfolio.com</p>
+            <p class="d-flex space-between"><b>Year :</b>  <span id="year"></span></p>
+            <p class="d-flex space-between"><b>Role :</b> <span id="role"></span></p>
+            <p class="d-flex space-between"><b>services :</b> <span id="services"></span></p>
+            <p class="d-flex space-between"><b>platform :</b><span id="platform"></span></p>
+            <p class="d-flex space-between"><b>url :</b><span id="url"></span></p>
 
         </div>
         <a id="link" href="" target="_blank"><div class="button-secondary">
           <p>visit site</p>
         </div></a>
         </div>
+
+        <div class="project-display d-flex center">
+          <video id="preview" autoplay muted loop playsinline ></video>
+        </div>
+       
       </div>
     </section>
 
@@ -83,11 +86,11 @@
 
     <section class="mockup  d-flex  center">
        
-            <div class="video-container mb-10">
-                <video id="video1" autoplay muted loop playsinline ></video>
+            <div id="video1" class="video-container mb-10">
+                <video  autoplay muted loop playsinline ></video>
             </div>
-            <div class="video-container mb-10">
-                <video id="video2" autoplay muted loop playsinline ></video>
+            <div id="video2" class="video-container mb-10">
+                <video  autoplay muted loop playsinline ></video>
             </div>
             <div class="container d-flex gap50 space-between">
                 <div id="mobile1" class="mobile-view ">

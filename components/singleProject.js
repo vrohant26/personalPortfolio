@@ -29,11 +29,22 @@ export function singlePageData() {
           link.href = `https://${project.url}`;
         });
 
-        document.getElementById("video1").src = project.video1;
-        document.getElementById("video2").src = project.video2;
+        document.querySelector("#video1 video").src = project.video1;
+        if (project.video2) {
+          document.querySelector("#video2 video").src = project.video2;
+        } else {
+          document.querySelector("#video2").style.display = "none";
+        }
         document.querySelector("#mobile1 img").src = project.mobile1;
         document.querySelector("#mobile2 img").src = project.mobile2;
         document.querySelector("#mobile3 img").src = project.mobile3;
+
+        for (const key in project) {
+          const element = document.querySelector(`#${key}`);
+          if (element) {
+            element.textContent = project[key];
+          }
+        }
       }
     });
 }

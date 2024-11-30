@@ -108,6 +108,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .lines {
@@ -318,7 +319,8 @@ nav .menu-item ul li:hover {
   margin-bottom: 20px;
 }
 
-.project-card .bottom .project-display {
+.project-card .bottom .project-display,
+#singleProject .project-display {
   height: 50vh;
   width: 45vw;
 }
@@ -480,8 +482,8 @@ footer .bottom-footer {
   position: relative;
 }
 
-#singleProject {
-  /* background-color: var(--dark-primary); */
+#singleProject .hero .hero-name {
+  align-items: end;
 }
 
 #singleProject .hero .hero-name .left {
@@ -497,10 +499,7 @@ footer .bottom-footer {
   border-top: 1px solid var(--transparent);
   flex-grow: 1;
   width: 100%;
-}
-
-#singleProject .hero-content video {
-  width: 60%;
+  align-items: center;
 }
 
 #singleProject .hero-content .project-details {
@@ -521,6 +520,7 @@ footer .bottom-footer {
 
 #singleProject .mockup .video-container {
   width: 70vw;
+  padding: 20px;
   background-color: var(--transparent);
   border-radius: 10px;
 }
@@ -528,6 +528,12 @@ footer .bottom-footer {
 #singleProject .mockup .mobile-view img {
   /* border-radius: 20px; */
   object-fit: contain;
+}
+
+#singleProject .project-info {
+  width: 50%;
+  flex-grow: 1;
+  gap: 50px;
 }
 
 #singleProject .project-info .button-secondary {
@@ -547,7 +553,7 @@ footer .bottom-footer {
 }
 
 #singleProject .hero-name img {
-  width: 10vw;
+  width: 5vw;
   transform: rotate(-45deg);
 }
 
