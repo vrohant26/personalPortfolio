@@ -335,7 +335,7 @@ nav .menu-item ul li:hover {
 
 .faq .left,
 .faq .right {
-  height: 50%;
+  height: 60%;
 }
 
 .faq .left h1 {
@@ -514,15 +514,21 @@ footer .bottom-footer {
 
 #singleProject .mockup {
   flex-direction: column;
-  /* width: 80%; */
+
   margin: auto;
 }
 
+
+
 #singleProject .mockup .video-container {
   width: 70vw;
+ 
+  border-radius: 10px;
+}
+
+#singleProject .mockup .video-container video{
   padding: 20px;
   background-color: var(--transparent);
-  border-radius: 10px;
 }
 
 #singleProject .mockup .mobile-view img {
@@ -533,7 +539,7 @@ footer .bottom-footer {
 #singleProject .project-info {
   width: 50%;
   flex-grow: 1;
-  gap: 50px;
+  gap: 150px;
 }
 
 #singleProject .project-info .button-secondary {

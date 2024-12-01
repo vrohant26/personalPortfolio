@@ -4,9 +4,11 @@ export function singlePageData() {
 
   fetch("../data.json")
     .then((response) => {
+   
       return response.json();
     })
     .then((json) => {
+     
       const project = json.selectedWorks.find(
         (project) => project.id == projectId
       );
@@ -29,15 +31,21 @@ export function singlePageData() {
           link.href = `https://${project.url}`;
         });
 
-        document.querySelector("#video1 video").src = project.video1;
+        document.querySelector("#video1").src = project.video1;
         if (project.video2) {
-          document.querySelector("#video2 video").src = project.video2;
+          document.querySelector("#video2").src = project.video2;
         } else {
           document.querySelector("#video2").style.display = "none";
         }
-        document.querySelector("#mobile1 img").src = project.mobile1;
-        document.querySelector("#mobile2 img").src = project.mobile2;
-        document.querySelector("#mobile3 img").src = project.mobile3;
+        const mobiles = ["mobile1", "mobile2", "mobile3"];
+
+        mobiles.forEach((id, index) => {
+          const element = document.querySelector(`#${id}`);
+         
+          if (element) {
+            element.src = project[`mobile${index + 1}`];
+          }
+        });
 
         for (const key in project) {
           const element = document.querySelector(`#${key}`);

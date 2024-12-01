@@ -67,6 +67,7 @@ export const intiBarba = () => {
           ScrollTrigger.refresh(true);
         },
         afterEnter() {
+          // preloader();
           setTimeout(() => {
             fadeUp();
             headingAnimation();
