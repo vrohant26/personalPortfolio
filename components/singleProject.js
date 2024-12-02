@@ -4,11 +4,9 @@ export function singlePageData() {
 
   fetch("../data.json")
     .then((response) => {
-   
       return response.json();
     })
     .then((json) => {
-     
       const project = json.selectedWorks.find(
         (project) => project.id == projectId
       );
@@ -19,7 +17,9 @@ export function singlePageData() {
           project.projectName;
         document.getElementById("preview").src = project.projectVideoLink;
         document
-          .querySelectorAll("#singleProject, .archive .upper, .archive .lower")
+          .querySelectorAll(
+            "#singleProject, .archive .upper, .archive .lower, nav"
+          )
           .forEach((element) => {
             element.style.backgroundColor = project.backgroundColor;
           });
@@ -41,7 +41,7 @@ export function singlePageData() {
 
         mobiles.forEach((id, index) => {
           const element = document.querySelector(`#${id}`);
-         
+
           if (element) {
             element.src = project[`mobile${index + 1}`];
           }

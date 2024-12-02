@@ -201,6 +201,17 @@ video {
   overflow: hidden;
 }
 
+/* .cursor {
+  position: fixed;
+  z-index: 999;
+
+  padding: 5vw;
+  scale: 0;
+  border-radius: 50%;
+  background-color: red;
+  display: none;
+} */
+
 ul {
   list-style: none;
 }
@@ -216,7 +227,7 @@ nav {
   height: 50px;
   position: fixed;
   z-index: 997;
-  /* background-color: var(--background); */
+  background-color: var(--background);
   top: 0%;
   width: 100vw;
   /* mix-blend-mode: difference; */
@@ -518,15 +529,13 @@ footer .bottom-footer {
   margin: auto;
 }
 
-
-
 #singleProject .mockup .video-container {
   width: 70vw;
- 
+
   border-radius: 10px;
 }
 
-#singleProject .mockup .video-container video{
+#singleProject .mockup .video-container video {
   padding: 20px;
   background-color: var(--transparent);
 }

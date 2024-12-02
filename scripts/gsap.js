@@ -82,78 +82,6 @@ export function accordion() {
   }
 }
 
-export function preloader() {
-  const preloader = document.querySelector(".preloader h2");
-
-  // const tl = gsap.timeline({ paused: true });
-  const tl = gsap.timeline();
-
-  tl.from(".preloader .counter", {
-    textContent: 0,
-    duration: 1,
-    ease: Power1.easeIn,
-    snap: { textContent: 1 },
-    stagger: 1,
-  });
-
-  tl.to(
-    preloader,
-    {
-      opacity: 0,
-      delay: 1,
-      duration: 0.5,
-      onComplete: () => {
-        document.querySelector("nav").style.zIndex = "999";
-        document.querySelector(".preloader").style.display = "none";
-      },
-    },
-    "-=1"
-  );
-
-  tl.from(
-    ".logo",
-    {
-      scale: 300,
-      ease: "expo.inOut",
-      duration: 2,
-    },
-    "-=1"
-  );
-
-  tl.from(
-    splitHead.chars,
-    {
-      yPercent: 100,
-      stagger: -0.009,
-      duration: 1,
-      ease: "expo.inOut",
-    },
-    "-=1.2"
-  );
-
-  tl.from(
-    "nav .menu-item ul li",
-    {
-      opacity: 0,
-      xPercent: 50,
-      duration: 1,
-      stagger: -0.05,
-    },
-    "-=1"
-  );
-
-  tl.from(
-    ".hero-content,  .social-links",
-    {
-      opacity: 0,
-      yPercent: 50,
-      duration: 1,
-      stagger: 0.5,
-    },
-    "-=1"
-  );
-}
-
 export function textUp() {
   const para = new SplitType(".about h4 ", { types: "lines, words" });
   gsap.from(para.words, {
@@ -312,4 +240,28 @@ export function openAnimation() {
     },
     "a"
   );
+}
+
+export function cursor() {
+  const cursor = document.querySelector(".cursor");
+
+  document.querySelector("main").addEventListener("mousemove", function (det) {
+    cursor.style.left = det.x + "px";
+    cursor.style.top = det.y + "px";
+  });
+
+  document.querySelector(".project-card").addEventListener("mouseover", () => {
+    gsap.to(cursor, {
+      display: "block",
+      scale: 1,
+      duration: 0.5,
+    });
+  });
+  document.querySelector(".project-card").addEventListener("mouseout", () => {
+    gsap.to(cursor, {
+      display: "none",
+      scale: 0,
+      duration: 0.5,
+    });
+  });
 }

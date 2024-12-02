@@ -18,7 +18,7 @@ export function getCurrentYear() {
   });
 }
 
-function navbar() {
+export function navbar() {
   let lastScroll = 0;
   const navbar = document.querySelector("#nav");
 
