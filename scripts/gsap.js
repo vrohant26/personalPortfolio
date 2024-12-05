@@ -241,27 +241,3 @@ export function openAnimation() {
     "a"
   );
 }
-
-export function cursor() {
-  const cursor = document.querySelector(".cursor");
-
-  document.querySelector("main").addEventListener("mousemove", function (det) {
-    cursor.style.left = det.x + "px";
-    cursor.style.top = det.y + "px";
-  });
-
-  document.querySelector(".project-card").addEventListener("mouseover", () => {
-    gsap.to(cursor, {
-      display: "block",
-      scale: 1,
-      duration: 0.5,
-    });
-  });
-  document.querySelector(".project-card").addEventListener("mouseout", () => {
-    gsap.to(cursor, {
-      display: "none",
-      scale: 0,
-      duration: 0.5,
-    });
-  });
-}

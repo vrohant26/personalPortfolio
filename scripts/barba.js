@@ -6,7 +6,6 @@ import {
   lineAnimation,
   fadeUp,
   openAnimation,
-  cursor,
 } from "./gsap.js";
 
 import { addProject } from "../components/components.js";
@@ -43,7 +42,6 @@ export const intiBarba = () => {
         },
         afterEnter() {
           setTimeout(() => {
-            // cursor();
             navbar();
             fadeUp();
             headingAnimation();
@@ -61,6 +59,7 @@ export const intiBarba = () => {
         namespace: "single-project",
         beforeEnter() {
           setTimeout(() => {
+            window.scroll(0, 0);
             navbar();
             openAnimation();
             mobileMenu();
@@ -73,7 +72,6 @@ export const intiBarba = () => {
 };
 
 export const defaultLeave = (data) => {
-  // const logo = data.current.container.querySelector(".logo");
   return gsap.to(data.current.container, {
     opacity: 0,
     ease: "expo.inOut",
@@ -82,7 +80,6 @@ export const defaultLeave = (data) => {
 };
 
 export const defaultEnter = (data) => {
-  // const logo = data.next.container.querySelector(".logo");
   return gsap.from(data.next.container, {
     opacity: 0,
     ease: "expo.inOut",
@@ -93,5 +90,4 @@ export const defaultEnter = (data) => {
 barba.hooks.enter(() => {
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   ScrollTrigger.refresh(true);
-  window.scroll(0, 0);
 });

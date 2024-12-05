@@ -14,9 +14,9 @@
       "projectService": "Design | Development | Low Code",
       "video2": "./assets/Projects/Roshni's Portfolio/mockup full page.mp4",
       "video1": "./assets/Projects/Roshni's Portfolio/entrance animation 1.mp4",
-      "mobile1": "./assets/Projects/Roshni's Portfolio/mobile hero.png",
-      "mobile2": "./assets/Projects/Roshni's Portfolio/mobile single product.png",
-      "mobile3": "./assets/Projects/Roshni's Portfolio/mobile work section.png",
+      "mobile1": "./assets/Projects/Roshni's Portfolio/mobile hero.webp",
+      "mobile2": "./assets/Projects/Roshni's Portfolio/mobile single product.webp",
+      "mobile3": "./assets/Projects/Roshni's Portfolio/mobile work section.webp",
       "description": "This portfolio website was crafted specifically for a social media manager aiming to impress recruiters. Interactive elements and an intuitive layout make it easy for recruiters to navigate, quickly get a sense of the manager's expertise, and see the impact of their work at a glance."
     },
     {
@@ -33,23 +33,28 @@
       "projectService": "Development | Low code | CMS",
       "video1": "./assets/Projects/Brandintitute/video 1.mp4",
       "video2": "",
-      "mobile1": "./assets/Projects/Brandintitute/mobile hero.png",
-      "mobile2": "./assets/Projects/Brandintitute/mobile testimonial.png",
-      "mobile3": "./assets/Projects/Brandintitute/mobile section.png",
+      "mobile1": "./assets/Projects/Brandintitute/mobile hero.webp",
+      "mobile2": "./assets/Projects/Brandintitute/mobile testimonial.webp",
+      "mobile3": "./assets/Projects/Brandintitute/mobile section.webp",
       "description": "I created a professional and user-centric website for Brand Institute, a leader in brand name development and identity for the healthcare and consumer sectors. The redesign focused on enhancing user experience and showcasing Brand Institute’s impressive portfolio, including high-profile pharmaceutical and consumer brands."
     },
     {
       "id": 3,
       "count": "04/04",
+      "year": "2024",
+      "role": "Design, Development",
+      "services": "content management, seo, custom theme",
+      "platform": "HTML, CSS, JAVASCRIPT",
+      "url": "ongoing",
       "backgroundColor": "rgb(0 23 90)",
       "projectName": "Albatross Arts",
       "projectVideoLink": "./assets/Projects/Albatross Arts/preview.mp4",
       "projectService": "Design | development | Full Code",
       "video1": "./assets/Projects/Albatross Arts/entrance.mp4",
       "video2": "./assets/Projects/Albatross Arts/video 2.mp4",
-      "mobile1": "./assets/Projects/Albatross Arts/mobile 1.png",
-      "mobile2": "./assets/Projects/Albatross Arts/mobile 2.png",
-      "mobile3": "./assets/Projects/Albatross Arts/mobile 5.png",
+      "mobile1": "./assets/Projects/Albatross Arts/mobile 1.webp",
+      "mobile2": "./assets/Projects/Albatross Arts/mobile 2.webp",
+      "mobile3": "./assets/Projects/Albatross Arts/mobile 5.webp",
       "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
     },
     {
@@ -61,9 +66,9 @@
       "projectService": "Design | development | Low code | CMS",
       "video1": "./assets/Projects/Thynkdifferent/entrance.mp4",
       "video2": "./assets/Projects/Thynkdifferent/full page.mp4",
-      "mobile1": "./assets/Projects/Thynkdifferent/mobile-hero.png",
-      "mobile2": "./assets/Projects/Thynkdifferent/mobile-about.png",
-      "mobile3": "./assets/Projects/Thynkdifferent/mobile-howitworks.png",
+      "mobile1": "./assets/Projects/Thynkdifferent/mobile hero.webp",
+      "mobile2": "./assets/Projects/Thynkdifferent/mobile about.webp",
+      "mobile3": "./assets/Projects/Thynkdifferent/mobile howitworks.webp",
       "description": "I Designed and developed ThynkDifferent, a website designed specifically for law students to participate in virtual competitions and events like moot court, debates, and workshops. The platform provides a streamlined experience for students to register, compete, and connect with peers and mentors in a virtual setting."
     }
   ]

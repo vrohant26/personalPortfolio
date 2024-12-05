@@ -201,17 +201,6 @@ video {
   overflow: hidden;
 }
 
-/* .cursor {
-  position: fixed;
-  z-index: 999;
-
-  padding: 5vw;
-  scale: 0;
-  border-radius: 50%;
-  background-color: red;
-  display: none;
-} */
-
 ul {
   list-style: none;
 }
@@ -227,10 +216,8 @@ nav {
   height: 50px;
   position: fixed;
   z-index: 997;
-  background-color: var(--background);
   top: 0%;
   width: 100vw;
-  /* mix-blend-mode: difference; */
 }
 
 nav .logo {
@@ -276,6 +263,10 @@ nav .menu-item ul li:hover {
   height: 100%;
   object-position: bottom;
   object-fit: cover;
+}
+
+.about {
+  height: 120vh;
 }
 
 .about h4 {
@@ -546,9 +537,8 @@ footer .bottom-footer {
 }
 
 #singleProject .project-info {
-  width: 50%;
-  flex-grow: 1;
-  gap: 150px;
+  width: 45%;
+  gap: 10vh;
 }
 
 #singleProject .project-info .button-secondary {
