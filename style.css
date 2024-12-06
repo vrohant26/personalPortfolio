@@ -401,22 +401,38 @@ nav .menu-item ul li:hover {
   height: 50vh;
 }
 
+.archive video,
+.archive img {
+  object-fit: contain;
+}
+
 .archive .archive-project {
+  padding: 20px 0;
   width: 600px;
-  height: 300px;
+  height: 350px;
   background-color: var(--transparent);
 }
 
 .archive .top {
   margin-left: 50px;
   animation: scroll-right 20s linear infinite;
+  animation-play-state: running;
 }
 
 /* Infinite scrolling effect: Bottom section moves left */
 .archive .bottom {
   margin-left: 50px;
   animation: scroll-left 20s linear infinite;
+  animation-play-state: running;
 }
+
+/* .archive .upper:hover .top {
+  animation-play-state: paused;
+}
+
+.archive .lower:hover .bottom {
+  animation-play-state: paused;
+} */
 
 /* Keyframes for scrolling right */
 @keyframes scroll-right {
