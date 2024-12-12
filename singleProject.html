@@ -5,22 +5,19 @@
    <link rel="icon" href="./assets/icon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>single project</title>
+  <title></title>
 </head>
 <link rel="stylesheet" href="./style.css" />
 
 <body  data-barba="wrapper">
 
 
-
-  <main id="singleProject" data-barba="container" data-barba-namespace="single-project">
-
   <nav id="nav" class="d-flex align-center space-between pl-5 pr-5">
    <a href="/"> <div class="logo"></div></a>
     <div class="menu-item">
       <ul class="d-flex gap20">
         <li><a href="/">home</li></a>
-        <li>Work</li>
+       <li><a href="./TestPage.html">Work </a> </li>
         <li>
           <a href="./about.html">About</a>
         </li>
@@ -45,9 +42,12 @@
     </div>
   </nav>
 
+  <main id="singleProject" data-barba="container" data-barba-namespace="single-project">
+
+
     
-   
-       <section class="hero  d-flex pl-5 pr-5 mb-10">
+     <div class="transition-container"></div>
+    <section class="hero d-flex pl-5 pr-5 mb-10">
       <div class="hero-name  pb-5 d-flex space-between">
         <div class="left d-flex">
           <a href="/"><h6><u>Go back</u></h6></a>
@@ -55,6 +55,7 @@
         </div>
        <a id="link" class="overflow-hidden" href="" target="_blank"> <img src="./assets/right-arrow (1).png" alt="right-arrow"></a>
     </div>
+    <div class="lines"></div>
       <div class="hero-content gap20 pt-5 d-flex space-between">
          <div class="project-info d-flex flex-column space-between">
           <div class="project-desc">
@@ -68,164 +69,57 @@
             <p class="d-flex space-between"><b>url :</b><span id="url"></span></p>
 
         </div>
-        <!-- <a id="link" href="" target="_blank"><div class="button-secondary">
-          <p>visit site</p>
-        </div></a> -->
+     
         </div>
 
         <div class="project-display d-flex center">
-          <video id="preview"  autoplay muted loop playsinline ></video>
+          <video id="preview"   autoplay muted loop playsinline ></video>
         </div>
        
       </div>
     </section>
-
+  
+    
 
 
     <section class="mockup  d-flex  center">
        
             <div  class="video-container mb-10">
-                <video id="video1"   autoplay muted loop playsinline ></video>
+                <video preload="none" id="video1"   autoplay muted loop playsinline   ></video>
             </div>
             <div class="video-container mb-10">
-                <video  id="video2"   autoplay muted loop playsinline ></video>
+                <video preload="none"  id="video2"   autoplay muted loop playsinline   ></video>
             </div>
             <div class="container d-flex gap50 space-between">
                 <div class="mobile-view ">
-                  <img  id="mobile1" />
+                  <img loading="lazy" id="mobile1" />
                 </div>
                 <div class="mobile-view ">
-                   <img  id="mobile2"/>
+                   <img loading="lazy"  id="mobile2"/>
                 </div>
                 <div  class="mobile-view ">
-                   <img  id="mobile3"/>
+                   <img loading="lazy" id="mobile3"/>
                 </div>
             </div>
       
     </section>
 
-    <section class="next-project h-full d-flex center gap50">
-        <h4><u>next case</u></h4>
-        <h2>Brandinstitute</h2>
+    <section class="next-project h-full d-flex center overflow-hidden gap50">
+      <div class="d-flex space-between w-full">
+        <a href="/"><h6><u>Go back</u></h6></a>
+        <a id="nextProjectLink"><h6><u>next case</u></h6> </a>
+      </div>
+        <div class="image-container">
+          <img id="nextPreview" />
+        </div>
+        <h2></h2>
+      
+
     </section>
 
 
 
 
-     
-
-    <div class="footer-animation overflow-hidden">
-
-      <section class="archive d-flex align-center h-full">
-        <div class="upper pb-5 d-flex">
-          <div class="top d-flex space-between">
-            <div class="archive-project d-flex center">
-             <video autoplay muted loop playsinline src="./assets/Archives/rep port 1.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
-            </div>
-            <div class="archive-project d-flex center">
-              <video autoplay muted loop playsinline src="./assets/Archives/tvax.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/port 4.webp" alt="portfolio">
-            </div>
-          </div>
-          <div class="top d-flex space-between">
-            <!-- Duplicates for seamless scrolling -->
-            <div class="archive-project d-flex center">
-              <video autoplay muted loop playsinline src="./assets/Archives/rep port 1.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-               <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
-            </div>
-            <div class="archive-project d-flex center">
-               <video autoplay muted loop playsinline src="./assets/Archives/tvax.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-             <img src="./assets/Archives/port 4.webp" alt="portfolio">
-            </div>
-          </div>
-        </div>
-
-
-        <div class="lower pt-5 d-flex">
-          <div class="bottom d-flex space-between">
-            <div class="archive-project d-flex center">
-                <video autoplay muted loop playsinline src="./assets/Archives/rep port 2.mp4"></video>
-              </div>
-              <div class="archive-project d-flex center">
-                <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
-              </div>
-              <div class="archive-project d-flex center">
-                
-                <video autoplay muted loop playsinline src="./assets/Archives/websitearea2.mp4"></video>
-              </div>
-              <div class="archive-project d-flex center">
-                <img src="./assets/Archives/movie app.webp" alt="movie app">
-              </div>
-            </div>
-            <div class="bottom d-flex space-between">
-              <!-- Duplicates for seamless scrolling -->
-            <div class="archive-project d-flex center">
-              <video autoplay muted loop playsinline src="./assets/Archives/rep port 2.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
-            </div>
-            <div class="archive-project d-flex center">
-              <video autoplay muted loop playsinline src="./assets/Archives/websitearea2.mp4"></video>
-            </div>
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/movie app.webp" alt="movie app">
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-
-      <footer class="h-full d-flex center pl-5 pr-5">
-        <div class="cta-container d-flex gap50">
-          <div class="overflow-hidden">
-            <h1>Get in touch</h1>
-          </div>
-          <div class="container d-flex align-center">
-            <div class="lines"></div>
-            <div class="circle d-flex center">
-              <h6>Say hello</h6>
-            </div>
-          </div>
-          <div class="cta-links d-flex gap20">
-            <a class="button-secondary" target="_blank" href="mailto:villarosarohant@gmail.com">
-              <div class="email ">
-                <h6>villarosarohant@gmail.com</h6>
-              </div>
-            </a>
-            <a class="button-secondary" href="tel: +919930171430">
-              <div class="Number">
-                <h6>9930171430</h6>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="bottom-footer d-flex space-between gap20  pl-5 pr-5">
-          <div class="left d-flex space-between gap50">
-            <p>&copy; <span class="currentYear"></span> Rohant Villarosa.</p>
-
-          </div>
-          <div class="right d-flex space-between gap50">
-            <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/">
-              <p>LinkedIn</p>
-            </a>
-            <a target="_blank" href="https://wa.link/b3yux8">
-              <p>whatsapp</p>
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
 
 
 </main> 

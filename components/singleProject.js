@@ -1,28 +1,24 @@
 export function singlePageData() {
   const urlParams = new URLSearchParams(window.location.search);
-  const projectId = urlParams.get("id");
+  const projectId = parseInt(urlParams.get("id")); // Convert ID to a number
 
   fetch("../data.json")
-    .then((response) => {
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((json) => {
-      const project = json.selectedWorks.find(
-        (project) => project.id == projectId
-      );
+      const projects = json.selectedWorks; // Array of projects
+      const totalProjects = projects.length;
+
+      // Find the current project
+      const project = projects.find((p) => p.id === projectId);
 
       if (project) {
-        ScrollTrigger.refresh(true);
+        // Update current project details
+        document.querySelector("title").textContent =
+          project.projectName + " - Rohant Villarosa";
+
         document.getElementById("projectName").textContent =
           project.projectName;
         document.getElementById("preview").src = project.projectVideoLink;
-        document
-          .querySelectorAll(
-            "#singleProject, .archive .upper, .archive .lower, nav"
-          )
-          .forEach((element) => {
-            element.style.backgroundColor = project.backgroundColor;
-          });
 
         document.querySelector(".project-desc h6").textContent =
           project.description;
@@ -37,11 +33,10 @@ export function singlePageData() {
         } else {
           document.querySelector("#video2").style.display = "none";
         }
-        const mobiles = ["mobile1", "mobile2", "mobile3"];
 
+        const mobiles = ["mobile1", "mobile2", "mobile3"];
         mobiles.forEach((id, index) => {
           const element = document.querySelector(`#${id}`);
-
           if (element) {
             element.src = project[`mobile${index + 1}`];
           }
@@ -52,6 +47,19 @@ export function singlePageData() {
           if (element) {
             element.textContent = project[key];
           }
+        }
+
+        // Handle Next Project
+        const nextProjectId = (projectId % totalProjects) + 1; // Loop back to 1 if it's the last project
+        const nextProject = projects.find((p) => p.id === nextProjectId); // Get next project details
+
+        if (nextProject) {
+          const nextProjectLink = `/singleProject.html?id=${nextProjectId}`;
+          document.querySelector("#nextProjectLink").href = nextProjectLink;
+
+          document.querySelector(".next-project h2").textContent =
+            nextProject.projectName;
+          document.querySelector("#nextPreview").src = nextProject.preview;
         }
       }
     });

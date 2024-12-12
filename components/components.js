@@ -1,12 +1,14 @@
 import { selecedProjectAnimation, snapProjects } from "../scripts/gsap.js";
 
+export let selectedWorksData = [];
+
 export async function addProject() {
   const selectedProject = document.getElementById("selectedProject");
 
   try {
     const response = await fetch("../data.json");
     const json = await response.json();
-    const selectedWorksData = json.selectedWorks;
+    selectedWorksData = json.selectedWorks;
 
     selectedWorksData.forEach((data) => {
       const projectHTML = `
