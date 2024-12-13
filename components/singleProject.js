@@ -10,12 +10,12 @@ export function singlePageData() {
 
       const project = projects.find((p) => p.id === projectId);
 
-      gsap.to("#singleProject", {
-        backgroundColor: project.backgroundColor,
-        duration: 1,
-        delay: 1,
-        ease: "power1.inOut",
-      });
+      // gsap.to("#singleProject", {
+      //   backgroundColor: "blue",
+      //   duration: 1,
+      //   delay: 1,
+      //   ease: "power1.inOut",
+      // });
 
       if (project) {
         document.querySelector("title").textContent =

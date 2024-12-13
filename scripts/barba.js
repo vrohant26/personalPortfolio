@@ -9,19 +9,14 @@ import {
   preloader,
 } from "./gsap.js";
 
-import { addProject } from "../components/components.js";
+import { addProject,selectedWorksData } from "../components/components.js";
 import { singlePageData } from "../components/singleProject.js";
 import { getCurrentYear } from "./script.js";
 
 export const intiBarba = () => {
-  function delay(n) {
-    n = n || 2000;
-    return new Promise((done) => {
-      setTimeout(() => {
-        done();
-      }, n);
-    });
-  }
+
+ 
+
 
   barba.init({
     sync: true,
@@ -31,11 +26,14 @@ export const intiBarba = () => {
         from: { namespace: "home" },
         to: { namespace: "single-project" },
         async leave(data) {
-          // const done = this.async();
+    
           return defaultLeave(data);
-          // await delay(800);
-          // done();
+         
         },
+
+        // async beforeEnter(data){
+        //   data.current.container.style.backgroundColor = currentProject.backgroundColor
+        // },
 
         async enter(data) {
           defaultEnter(data);
@@ -126,6 +124,10 @@ export const defaultLeave = (data) => {
   const urlParams = new URLSearchParams(new URL(nextLink.href).search);
   const nextProjectId = parseInt(urlParams.get("id"));
 
+  const currentProject = selectedWorksData.find((project)=> project.id == nextProjectId );
+
+  
+  
   const specificCard = data.current.container.querySelector(
     `.project-card.project-${nextProjectId}`
   );
@@ -134,7 +136,17 @@ export const defaultLeave = (data) => {
     ".transition-container"
   );
 
+  gsap.set([transitionContainer, data.next.container],{
+    backgroundColor : currentProject.backgroundColor,
+  })
+ 
+
+
+
+ 
   if (specificCard) {
+
+  
     tl.to(specificCard, {
       scale: 0.8,
       duration: 1.2,
@@ -153,18 +165,20 @@ export const defaultLeave = (data) => {
   }
 
   return tl;
+
+     
+
 };
 
 export const defaultEnter = (data) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const projectId = parseInt(urlParams.get("id"));
+  
 
   const projectName = data.next.container.querySelector(
     "#singleProject .hero-name .left h2"
   );
 
   gsap.set(projectName, { y: "-120%" });
-
+  
   const tl = gsap.timeline();
 
   tl.to("#singleProject .hero", {

@@ -307,7 +307,7 @@ nav .menu-item ul li:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   transform: translateY(100%);
   z-index: 9;
   /* display: none; */
@@ -521,6 +521,11 @@ footer .bottom-footer {
   position: relative;
 }
 
+/* #singleProject{
+background-color: white;
+color : black;
+} */
+
 #singleProject video {
   object-fit: contain;
 }
@@ -614,6 +619,8 @@ footer .bottom-footer {
 #singleProject .next-project img {
   object-fit: contain;
 }
+
+
 
 /* tablets */
 @media only screen and (max-width: 768px) {
