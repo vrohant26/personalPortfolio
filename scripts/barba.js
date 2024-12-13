@@ -6,12 +6,12 @@ import {
   lineAnimation,
   fadeUp,
   openAnimation,
+  preloader,
 } from "./gsap.js";
 
 import { addProject } from "../components/components.js";
 import { singlePageData } from "../components/singleProject.js";
 import { getCurrentYear } from "./script.js";
-import { selectedWorksData } from "../components/components.js";
 
 export const intiBarba = () => {
   function delay(n) {
@@ -37,9 +37,20 @@ export const intiBarba = () => {
           // done();
         },
 
-        afterLeave() {
-          ScrollTrigger.getAll().forEach((t) => t.kill());
-          ScrollTrigger.refresh(true);
+        async enter(data) {
+          defaultEnter(data);
+        },
+      },
+
+      {
+        name: "default-transition",
+
+        async leave(data) {
+          return gsap.to(data.current.container, {
+            opacity: 0,
+            ease: "expo.inOut",
+            duration: 1,
+          });
         },
 
         async enter(data) {
@@ -50,25 +61,16 @@ export const intiBarba = () => {
               vid.play();
             }
           });
-          defaultEnter(data);
-        },
-      },
 
-      {
-        name: "default-transition",
-        async leave(data) {
-          return gsap.to(data.current.container, {
-            opacity: 0,
-            ease: "expo.inOut",
-            duration: 1,
-          });
-        },
-        async enter(data) {
           gsap.from(data.next.container, {
             opacity: 0,
             ease: "expo.inOut",
             duration: 1,
           });
+        },
+
+        async once() {
+          preloader();
         },
       },
     ],
@@ -157,25 +159,28 @@ export const defaultEnter = (data) => {
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = parseInt(urlParams.get("id"));
 
-  const color = selectedWorksData.find((project) => {
-    if (project.id == projectId) {
-      return project;
-    }
-  });
+  const projectName = data.next.container.querySelector(
+    "#singleProject .hero-name .left h2"
+  );
 
-  const projectName = data.next.container.querySelector(".hero-name .left h2");
+  gsap.set(projectName, { y: "-120%" });
+
   const tl = gsap.timeline();
 
-  tl.to(".hero", {
+  tl.to("#singleProject .hero", {
     visibility: "visible",
   });
 
-  tl.to([projectName], {
-    y: "0%",
-    stagger: 0.05,
-    duration: 1.2,
-    ease: "expo.inOut",
-  });
+  tl.to(
+    [projectName],
+    {
+      y: "0%",
+      stagger: 0.05,
+      duration: 1.2,
+      ease: "expo.inOut",
+    },
+    "-=1"
+  );
 
   tl.from(
     ".lines",
@@ -197,8 +202,4 @@ export const defaultEnter = (data) => {
     },
     "-=1.5"
   );
-  tl.to("#singleProject", {
-    backgroundColor: color.backgroundColor,
-    duration: 0.5,
-  });
 };

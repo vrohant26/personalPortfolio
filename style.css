@@ -210,7 +210,7 @@ ul {
 
 .preloader {
   position: fixed;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   z-index: 999;
   width: 100%;
 }
@@ -225,6 +225,7 @@ nav {
 
 nav .logo {
   z-index: 998;
+  scale: 200;
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50px;
@@ -242,6 +243,10 @@ nav .menu-item ul li:hover {
   transition: color 0.2s ease-in-out;
 }
 
+/* nav .menu-item ul li {
+  overflow: hidden;
+} */
+
 .hero {
   z-index: 998;
   padding-top: 70px;
@@ -253,6 +258,7 @@ nav .menu-item ul li:hover {
 }
 
 .hero .hero-content {
+  background-color: var(--transparent);
   width: 100%;
   height: 50vh;
 }
@@ -515,10 +521,6 @@ footer .bottom-footer {
   position: relative;
 }
 
-#singleProject .hero {
-  visibility: hidden;
-}
-
 #singleProject video {
   object-fit: contain;
 }
@@ -533,15 +535,12 @@ footer .bottom-footer {
   gap: 5vw;
 }
 
-#singleProject .hero .hero-name h2 {
-  transform: translateY(120%);
-}
-
 #singleProject .hero .hero-name .left h6 {
   cursor: pointer;
 }
 
 #singleProject .hero-content {
+  background-color: transparent;
   flex-grow: 1;
   width: 100%;
   align-items: center;

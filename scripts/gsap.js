@@ -91,7 +91,7 @@ export function textUp() {
     ease: "expo.inOut",
     scrollTrigger: {
       trigger: ".about",
-      start: "top 90%",
+      start: "top 80%",
       toggleActions: "play none none reset",
     },
   });
@@ -118,7 +118,6 @@ export function fadeUp() {
   gsap.utils.toArray(".fade-up").forEach((container) => {
     gsap.from(container, {
       opacity: 0,
-      yPercent: 10,
       duration: 1,
       scrollTrigger: {
         trigger: container,
@@ -239,5 +238,64 @@ export function openAnimation() {
       scale: 1.5,
     },
     "a"
+  );
+}
+
+export function preloader() {
+  const tl = gsap.timeline();
+
+  tl.from(".preloader h2 span", {
+    textContent: 0,
+    duration: 2,
+    ease: "Power1.easeIn",
+    snap: { textContent: 2 },
+    stagger: 1,
+  });
+
+  tl.to(".preloader", {
+    opacity: 0,
+    display: "none",
+  });
+
+  tl.to(
+    ".logo",
+    {
+      scale: 1,
+      duration: 2,
+      ease: "expo.inOut",
+    },
+    "-=1"
+  );
+
+  tl.from(
+    ".hero-name h1 .char",
+    {
+      y: "100%",
+      duration: 1,
+      stagger: -0.012,
+      ease: "expo.inOut",
+    },
+    "-=1.3"
+  );
+
+  tl.from(
+    ".menu-item li, .social-links a",
+    {
+      opacity: 0,
+      x: "50%",
+      duration: 1.2,
+      stagger: 0.05,
+      ease: "expo.inOut",
+    },
+    "-=1.2"
+  );
+
+  tl.from(
+    ".hero-content",
+    {
+      opacity: 0,
+      duration: 1.5,
+    },
+    "-=0.7"
   );
 }

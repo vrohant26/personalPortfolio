@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./style.css" />
 
 <body data-barba="wrapper">
-
+  <div class="preloader d-flex center h-full"><h2><span>100</span>%</h2></div>
   <nav id="nav" class="d-flex align-center space-between pl-5 pr-5">
     <a href="/">
       <div class="logo"></div>
@@ -22,7 +22,7 @@
         <li>
           <a href="./about.html">About</a>
         </li>
-        <li>Contact</li>
+        <a href="#contact"><li>Contact</li></a> 
       </ul>
     </div>
     <div class="mobile-menu">
@@ -48,13 +48,14 @@
 
     <div class="transition-container"></div>
     <section class="hero d-flex pl-5 pr-5">
-      <div class="hero-name d-flex space-between">
+      <div class="hero-name overflow-hidden d-flex space-between">
         <h1>Rohant</h1>
         <h1>Villarosa</h1>
       </div>
       <div class="hero-content">
-        <video style="cursor : pointer" id="myVideo" autoplay muted loop playsinline
+          <video style="cursor : pointer" id="myVideo" autoplay muted loop playsinline
           src="./assets/Portfolio+Hero+Video.mp4"></video>
+      
       </div>
       <div class="social-links d-flex space-between">
         <a target="_blank" href="https://www.linkedin.com/in/rohant-villarosa-a48481219/">
@@ -167,9 +168,7 @@
       <section class="archive d-flex align-center h-full">
         <div class="upper pb-5 d-flex">
           <div class="top d-flex space-between">
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
-            </div>
+          
             <div class="archive-project d-flex center">
               <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
             </div>
@@ -183,9 +182,7 @@
           </div>
           <div class="top d-flex space-between">
             <!-- Duplicates for seamless scrolling -->
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
-            </div>
+          
             <div class="archive-project d-flex center">
               <img src="./assets/Archives/blinsquare.webp" alt="blingsquare">
             </div>
@@ -201,9 +198,7 @@
 
         <div class="lower pt-5 d-flex">
           <div class="bottom d-flex space-between">
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
-            </div>
+           
             <div class="archive-project d-flex center">
               <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
             </div>
@@ -216,10 +211,7 @@
           </div>
           <div class="bottom d-flex space-between">
             <!-- Duplicates for seamless scrolling -->
-            <div class="archive-project d-flex center">
-              <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
-
-            </div>
+          
             <div class="archive-project d-flex center">
               <img src="./assets/Archives/websitearea3.webp" alt="websitearea3">
             </div>
@@ -236,7 +228,7 @@
       </section>
 
 
-      <footer class="h-full d-flex center pl-5 pr-5">
+      <footer id="contact" class="h-full d-flex center pl-5 pr-5">
         <div class="cta-container d-flex gap50">
           <div class="overflow-hidden">
             <h1>Get in touch</h1>

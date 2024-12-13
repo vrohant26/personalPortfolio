@@ -1,18 +1,23 @@
 export function singlePageData() {
   const urlParams = new URLSearchParams(window.location.search);
-  const projectId = parseInt(urlParams.get("id")); // Convert ID to a number
+  const projectId = parseInt(urlParams.get("id"));
 
   fetch("../data.json")
     .then((response) => response.json())
     .then((json) => {
-      const projects = json.selectedWorks; // Array of projects
+      const projects = json.selectedWorks;
       const totalProjects = projects.length;
 
-      // Find the current project
       const project = projects.find((p) => p.id === projectId);
 
+      gsap.to("#singleProject", {
+        backgroundColor: project.backgroundColor,
+        duration: 1,
+        delay: 1,
+        ease: "power1.inOut",
+      });
+
       if (project) {
-        // Update current project details
         document.querySelector("title").textContent =
           project.projectName + " - Rohant Villarosa";
 
