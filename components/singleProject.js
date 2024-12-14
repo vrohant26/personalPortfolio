@@ -10,13 +10,11 @@ export function singlePageData() {
 
       const project = projects.find((p) => p.id === projectId);
 
-      // gsap.to("#singleProject", {
-      //   backgroundColor: "blue",
-      //   duration: 1,
-      //   delay: 1,
-      //   ease: "power1.inOut",
-      // });
+      if(document.querySelector("#singleProject").style.backgroundColor == ""){
+        document.querySelector("#singleProject").style.backgroundColor = project.backgroundColor
+      }
 
+    
       if (project) {
         document.querySelector("title").textContent =
           project.projectName + " - Rohant Villarosa";

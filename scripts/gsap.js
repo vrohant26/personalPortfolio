@@ -242,6 +242,9 @@ export function openAnimation() {
 }
 
 export function preloader() {
+
+  gsap.set(".logo",{scale : 200})
+
   const tl = gsap.timeline();
 
   tl.from(".preloader h2 span", {
@@ -267,16 +270,20 @@ export function preloader() {
     "-=1"
   );
 
-  tl.from(
-    ".hero-name h1 .char",
-    {
-      y: "100%",
-      duration: 1,
-      stagger: -0.012,
-      ease: "expo.inOut",
-    },
-    "-=1.3"
-  );
+  if(document.querySelector(".hero-name h1 .char")){
+    tl.from(
+      ".hero-name h1 .char",
+      {
+        y: "100%",
+        duration: 1,
+        stagger: -0.012,
+        ease: "expo.inOut",
+      },
+      "-=1.3"
+    );
+  }
+
+
 
   tl.from(
     ".menu-item li, .social-links a",
@@ -290,12 +297,16 @@ export function preloader() {
     "-=1.2"
   );
 
-  tl.from(
-    ".hero-content",
-    {
-      opacity: 0,
-      duration: 1.5,
-    },
-    "-=0.7"
-  );
+  if(document.querySelector(".hero-content")){
+    tl.from(
+      ".hero-content",
+      {
+        opacity: 0,
+        duration: 1.5,
+      },
+      "-=0.7"
+    );
+  }
+
+
 }

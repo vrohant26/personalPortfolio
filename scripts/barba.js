@@ -76,6 +76,7 @@ export const intiBarba = () => {
       {
         namespace: "home",
         beforeEnter() {
+          // preloader();
           addProject();
         },
         afterEnter() {
@@ -177,7 +178,7 @@ export const defaultEnter = (data) => {
     "#singleProject .hero-name .left h2"
   );
 
-  gsap.set(projectName, { y: "-120%" });
+  // gsap.set(projectName, { y: "-120%",  });
   
   const tl = gsap.timeline();
 
@@ -185,10 +186,12 @@ export const defaultEnter = (data) => {
     visibility: "visible",
   });
 
-  tl.to(
+  tl.from(
     [projectName],
     {
-      y: "0%",
+      y: "-120%",
+      transform : "rotate(-5deg)",
+     
       stagger: 0.05,
       duration: 1.2,
       ease: "expo.inOut",
@@ -201,6 +204,7 @@ export const defaultEnter = (data) => {
     {
       opacity: 0,
       width: "0%",
+      ease: "expo.out",
       duration: 1,
       delay: 0.2,
     },

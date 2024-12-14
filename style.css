@@ -225,7 +225,7 @@ nav {
 
 nav .logo {
   z-index: 998;
-  scale: 200;
+
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50px;
@@ -521,10 +521,7 @@ footer .bottom-footer {
   position: relative;
 }
 
-/* #singleProject{
-background-color: white;
-color : black;
-} */
+
 
 #singleProject video {
   object-fit: contain;

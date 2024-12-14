@@ -29,9 +29,11 @@ function goBack() {
 }
 
 function openVideo() {
+
   const videoElement = document.getElementById("myVideo");
 
-  // Add an event listener for the click event
+  if(videoElement){
+     // Add an event listener for the click event
   videoElement.addEventListener("click", () => {
     // Check if the Fullscreen API is available
     if (videoElement.requestFullscreen) {
@@ -47,6 +49,8 @@ function openVideo() {
     // Play the video in fullscreen mode
     videoElement.play();
   });
+  }
+ 
 }
 
 function lazyLoadVideo() {
