@@ -199,17 +199,11 @@ export const defaultEnter = (data) => {
     "-=1"
   );
 
-  tl.from(
+  tl.fromTo(
     ".lines",
-    {
-      opacity: 0,
-      width: "0%",
-      ease: "expo.out",
-      duration: 1,
-      delay: 0.2,
-    },
-    "-=0.8"
-  );
+    { width: "0%", opacity: 0 }, 
+    { width: "100%", opacity: 1, ease: "expo.out", duration: 1, delay: 0.2 } 
+  ,"-=0.8");
 
   tl.from(
     ".project-info, .project-display, .hero-name .left h6, .hero-name img",
