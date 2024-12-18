@@ -103,6 +103,10 @@ li {
   font-size: 14px;
 }
 
+p b {
+  white-space: nowrap;
+}
+
 img,
 video {
   width: 100%;
@@ -111,7 +115,7 @@ video {
 }
 
 .lines {
-  width: 100% ;
+  width: 100%;
   height: 1px;
   background-color: var(--white);
 }
@@ -521,8 +525,6 @@ footer .bottom-footer {
   position: relative;
 }
 
-
-
 #singleProject video {
   object-fit: contain;
 }
@@ -612,12 +614,13 @@ footer .bottom-footer {
   background-color: var(--transparent);
   padding: 20px;
 }
+#singleProject .next-project h2 {
+  text-align: center;
+}
 
 #singleProject .next-project img {
   object-fit: contain;
 }
-
-
 
 /* tablets */
 @media only screen and (max-width: 768px) {
@@ -664,6 +667,7 @@ footer .bottom-footer {
   nav .logo {
     width: 7vw;
     height: 7vw;
+    z-index: 996;
   }
 
   nav .menu-item {
@@ -720,6 +724,7 @@ footer .bottom-footer {
   }
   .project-card .bottom {
     flex-direction: column-reverse;
+    gap: 50px;
     height: 65vh;
   }
 
@@ -764,8 +769,8 @@ footer .bottom-footer {
   }
 
   .archive .archive-project {
-    width: 300px;
-    height: 250px;
+    width: 220px;
+    height: 150px;
   }
 
   footer .bottom-footer {
@@ -774,8 +779,9 @@ footer .bottom-footer {
   }
 
   footer .cta-container .circle {
-    width: 35vw;
-    height: 35vw;
+    top: 20%;
+    width: 25vw;
+    height: 25vw;
   }
   footer .bottom-footer .left,
   footer .bottom-footer .right {
@@ -788,10 +794,24 @@ footer .bottom-footer {
     flex-wrap: wrap;
   }
 
-  #singleProject .hero-name {
+  #singleProject #link,
+  #singleProject .project-display {
+    display: none;
+  }
+
+  #singleProject .hero-name,
+  #singleProject .hero-content,
+  #singleProject .hero .hero-name .left {
+    align-items: start !important;
+    justify-content: center;
     flex-direction: column;
     gap: 5vw;
   }
+
+  #singleProject .project-info {
+    width: 100%;
+  }
+
   #singleProject .hero-name h1 {
     text-align: center;
   }
@@ -800,21 +820,29 @@ footer .bottom-footer {
     height: 50vh !important;
   }
 
-  #singleProject .hero-name .project-details {
+  #singleProject .hero-name .project-details,
+  .w-full,
+  #singleProject .next-project .image-container {
     width: 100%;
   }
 
+  #singleProject .mockup .video-container video,
+  #singleProject .next-project .image-container {
+    padding: 10px;
+  }
+
   #singleProject .mockup .video-container {
-    height: 50vh;
+    height: 25vh;
+    width: 100%;
   }
 
   #singleProject .mockup .mobile-view {
     width: 100%;
-    height: 50vh;
+    height: 70vh;
   }
 
-  #singleProject .next-project {
-    height: 50vh !important;
+  #singleProject .next-project h2 {
+    text-align: left;
   }
 
   .container {

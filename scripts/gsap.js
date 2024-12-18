@@ -242,8 +242,7 @@ export function openAnimation() {
 }
 
 export function preloader() {
-
-  gsap.set(".logo",{scale : 200})
+  gsap.set(".logo", { scale: 200 });
 
   const tl = gsap.timeline();
 
@@ -270,7 +269,7 @@ export function preloader() {
     "-=1"
   );
 
-  if(document.querySelector(".hero-name h1 .char")){
+  if (document.querySelector(".hero-name h1 .char")) {
     tl.from(
       ".hero-name h1 .char",
       {
@@ -283,7 +282,19 @@ export function preloader() {
     );
   }
 
-
+  if (document.querySelector(".mobile-menu")) {
+    tl.from(
+      ".mobile-menu",
+      {
+        opacity: 0,
+        x: "50%",
+        duration: 1.2,
+        stagger: 0.05,
+        ease: "expo.inOut",
+      },
+      "-=1.2"
+    );
+  }
 
   tl.from(
     ".menu-item li, .social-links a",
@@ -297,7 +308,7 @@ export function preloader() {
     "-=1.2"
   );
 
-  if(document.querySelector(".hero-content")){
+  if (document.querySelector(".hero-content")) {
     tl.from(
       ".hero-content",
       {
@@ -307,6 +318,4 @@ export function preloader() {
       "-=0.7"
     );
   }
-
-
 }
