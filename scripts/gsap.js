@@ -20,6 +20,18 @@ export function mobileMenu() {
     display: "block",
   });
 
+  tl.from(
+    "nav .mobile-menu-full ul li",
+    {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      ease: "expo.inOut",
+      stagger: 0.05,
+    },
+    "-=1"
+  );
+
   open.addEventListener("click", () => {
     gsap.to(".menu p", {
       yPercent: -100,
@@ -38,6 +50,10 @@ export function mobileMenu() {
 
   links.forEach((link) => {
     link.addEventListener("click", () => {
+      gsap.to(".menu p", {
+        yPercent: 0,
+        duration: 0.2,
+      });
       tl.reverse(); // Close the menu when a link is clicked
     });
   });

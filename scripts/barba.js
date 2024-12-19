@@ -9,15 +9,11 @@ import {
   preloader,
 } from "./gsap.js";
 
-import { addProject,selectedWorksData } from "../components/components.js";
+import { addProject, selectedWorksData } from "../components/components.js";
 import { singlePageData } from "../components/singleProject.js";
 import { getCurrentYear } from "./script.js";
 
 export const intiBarba = () => {
-
- 
-
-
   barba.init({
     sync: true,
     transitions: [
@@ -26,9 +22,7 @@ export const intiBarba = () => {
         from: { namespace: "home" },
         to: { namespace: "single-project" },
         async leave(data) {
-    
           return defaultLeave(data);
-         
         },
 
         // async beforeEnter(data){
@@ -111,6 +105,7 @@ export const intiBarba = () => {
 
           setTimeout(() => {
             openAnimation();
+            mobileMenu();
           }, 50);
         },
       },
@@ -125,10 +120,10 @@ export const defaultLeave = (data) => {
   const urlParams = new URLSearchParams(new URL(nextLink.href).search);
   const nextProjectId = parseInt(urlParams.get("id"));
 
-  const currentProject = selectedWorksData.find((project)=> project.id == nextProjectId );
+  const currentProject = selectedWorksData.find(
+    (project) => project.id == nextProjectId
+  );
 
-  
-  
   const specificCard = data.current.container.querySelector(
     `.project-card.project-${nextProjectId}`
   );
@@ -137,17 +132,11 @@ export const defaultLeave = (data) => {
     ".transition-container"
   );
 
-  gsap.set([transitionContainer, data.next.container],{
-    backgroundColor : currentProject.backgroundColor,
-  })
- 
+  gsap.set([transitionContainer, data.next.container], {
+    backgroundColor: currentProject.backgroundColor,
+  });
 
-
-
- 
   if (specificCard) {
-
-  
     tl.to(specificCard, {
       scale: 0.8,
       duration: 1.2,
@@ -166,20 +155,15 @@ export const defaultLeave = (data) => {
   }
 
   return tl;
-
-     
-
 };
 
 export const defaultEnter = (data) => {
-  
-
   const projectName = data.next.container.querySelector(
     "#singleProject .hero-name .left h2"
   );
 
   // gsap.set(projectName, { y: "-120%",  });
-  
+
   const tl = gsap.timeline();
 
   tl.to("#singleProject .hero", {
@@ -190,8 +174,8 @@ export const defaultEnter = (data) => {
     [projectName],
     {
       y: "-120%",
-      transform : "rotate(-5deg)",
-     
+      transform: "rotate(-5deg)",
+
       stagger: 0.05,
       duration: 1.2,
       ease: "expo.inOut",
@@ -201,9 +185,10 @@ export const defaultEnter = (data) => {
 
   tl.fromTo(
     ".lines",
-    { width: "0%", opacity: 0 }, 
-    { width: "100%", opacity: 1, ease: "expo.out", duration: 1, delay: 0.2 } 
-  ,"-=0.8");
+    { width: "0%", opacity: 0 },
+    { width: "100%", opacity: 1, ease: "expo.out", duration: 1, delay: 0.2 },
+    "-=0.8"
+  );
 
   tl.from(
     ".project-info, .project-display, .hero-name .left h6, .hero-name img",

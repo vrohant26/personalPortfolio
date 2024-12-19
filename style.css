@@ -14,6 +14,13 @@
   --text: rgb(190, 190, 190);
 }
 
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    height: -webkit-fill-available;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -676,14 +683,21 @@ footer .bottom-footer {
 
   nav .mobile-menu {
     display: block;
+    position: relative;
+    z-index: 999;
   }
 
   nav .mobile-menu-full {
     position: absolute;
-    top: 30vh;
-    width: 100vw;
+    top: 0;
+    left: 0;
+    padding: 100px 20px;
     height: 100svh;
-    border-radius: 10px;
+    width: 100%;
+    font-family: ;
+
+    /* z-index: 998; */
+    background-color: var(--primary);
   }
 
   nav .mobile-menu .menu {
@@ -699,7 +713,8 @@ footer .bottom-footer {
   }
 
   nav .mobile-menu-full ul li {
-    font-size: 15vw;
+    font-size: 30vw;
+    font-family: "Arges", sans-serif;
   }
 
   .hero .hero-content {
