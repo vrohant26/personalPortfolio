@@ -24,7 +24,7 @@ export async function addProject() {
                 <div class="project-name"><h2>${data.projectName}</h2></div>
               </div> 
               <div class="project-display d-flex center">
-                <video class="lazy-video" loading = "lazy" autoplay muted loop playsinline src="${data.projectVideoLink}"><source type="video/mp4" /></video>
+                <video preload = "none"  autoplay="false" muted loop playsinline ><source src="${data.projectVideoLink}" type="video/mp4" ></video>
               </div>
             </div>
           </div>
@@ -35,6 +35,7 @@ export async function addProject() {
     // Trigger animations and refresh ScrollTrigger
     snapProjects();
     selecedProjectAnimation();
+   
     ScrollTrigger.refresh(true);
   } catch (error) {
     console.error("Error:", error);
