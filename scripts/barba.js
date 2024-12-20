@@ -25,10 +25,6 @@ export const intiBarba = () => {
           return defaultLeave(data);
         },
 
-        // async beforeEnter(data){
-        //   data.current.container.style.backgroundColor = currentProject.backgroundColor
-        // },
-
         async enter(data) {
           defaultEnter(data);
         },
@@ -82,7 +78,7 @@ export const intiBarba = () => {
             accordion();
             getCurrentYear();
             openAnimation();
-
+           
             mobileMenu();
           }, 50);
         },

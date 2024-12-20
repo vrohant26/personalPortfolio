@@ -24,7 +24,7 @@ export async function addProject() {
                 <div class="project-name"><h2>${data.projectName}</h2></div>
               </div> 
               <div class="project-display d-flex center">
-                <video autoplay muted loop playsinline src="${data.projectVideoLink}"></video>
+                <video class="lazy-video" loading = "lazy" autoplay muted loop playsinline src="${data.projectVideoLink}"><source type="video/mp4" /></video>
               </div>
             </div>
           </div>

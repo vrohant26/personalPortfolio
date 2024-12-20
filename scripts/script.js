@@ -53,32 +53,12 @@ function openVideo() {
  
 }
 
-function lazyLoadVideo() {
-  const videos = document.querySelectorAll("video[data-src]");
 
-  const videoObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const video = entry.target;
 
-        // Set the actual video src from data-src
-        video.src = video.getAttribute("data-src");
-        video.removeAttribute("data-src");
 
-        // Load the video
-        video.load();
-
-        // Stop observing this video as it has been loaded
-        observer.unobserve(video);
-      }
-    });
-  });
-
-  videos.forEach((video) => videoObserver.observe(video));
-}
-
-lazyLoadVideo();
 openVideo();
 smoothScroll();
 intiBarba();
 window.goBack = goBack;
+
+
