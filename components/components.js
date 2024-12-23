@@ -12,7 +12,7 @@ export async function addProject() {
 
     selectedWorksData.forEach((data) => {
       const projectHTML = `
-        <a href="../singleProject.html?id=${data.id}">
+        <a href="../project.html?id=${data.id}">
           <div style="background-color: ${data.backgroundColor}" 
                class="project-card pl-5 pr-5 pb-5 pt-5 project-${data.id} d-flex h-full">
             <div class="top d-flex space-between">
@@ -24,7 +24,9 @@ export async function addProject() {
                 <div class="project-name"><h2>${data.projectName}</h2></div>
               </div> 
               <div class="project-display d-flex center">
-                <video preload = "none"  autoplay="false" muted loop playsinline ><source src="${data.projectVideoLink}" type="video/mp4" ></video>
+                <video preload="none" autoplay="false" muted loop playsinline>
+                  <source src="${data.projectVideoLink}" type="video/mp4">
+                </video>
               </div>
             </div>
           </div>
@@ -35,7 +37,6 @@ export async function addProject() {
     // Trigger animations and refresh ScrollTrigger
     snapProjects();
     selecedProjectAnimation();
-   
     ScrollTrigger.refresh(true);
   } catch (error) {
     console.error("Error:", error);

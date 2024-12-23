@@ -66,11 +66,11 @@ export const intiBarba = () => {
       {
         namespace: "home",
         beforeEnter() {
-          // preloader();
           addProject();
         },
         afterEnter() {
           setTimeout(() => {
+            
             fadeUp();
             headingAnimation();
             lineAnimation();
@@ -111,6 +111,7 @@ export const intiBarba = () => {
 
 export const defaultLeave = (data) => {
   const tl = gsap.timeline();
+  
 
   const nextLink = data.trigger;
   const urlParams = new URLSearchParams(new URL(nextLink.href).search);

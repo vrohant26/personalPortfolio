@@ -21,6 +21,7 @@
   }
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -323,6 +324,7 @@ nav .menu-item ul li:hover {
   z-index: 9;
   /* display: none; */
 }
+
 
 .project-card {
   position: relative;
@@ -694,9 +696,6 @@ footer .bottom-footer {
     padding: 100px 20px;
     height: 100svh;
     width: 100%;
-    font-family: ;
-
-    /* z-index: 998; */
     background-color: var(--primary);
   }
 
