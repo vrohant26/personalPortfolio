@@ -30,7 +30,7 @@ export function mobileMenu() {
       stagger: 0.05,
     },
     "-=1"
-  );
+  ); 
 
   open.addEventListener("click", () => {
     gsap.to(".menu p", {
