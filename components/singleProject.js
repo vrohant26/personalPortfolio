@@ -10,11 +10,10 @@ export function singlePageData() {
 
       const project = projects.find((p) => p.id === projectId);
 
-      if(document.querySelector("#singleProject").style.backgroundColor == ""){
-        document.querySelector("#singleProject").style.backgroundColor = project.backgroundColor
+      if (document.querySelector("#singleProject").style.backgroundColor == "") {
+        document.querySelector("#singleProject").style.backgroundColor = project.backgroundColor;
       }
 
-    
       if (project) {
         document.querySelector("title").textContent =
           project.projectName + " - Rohant Villarosa";
@@ -57,7 +56,7 @@ export function singlePageData() {
         const nextProject = projects.find((p) => p.id === nextProjectId); // Get next project details
 
         if (nextProject) {
-          const nextProjectLink = `/singleProject.html?id=${nextProjectId}`;
+          const nextProjectLink = `/project.html?id=${nextProjectId}`;
           document.querySelector("#nextProjectLink").href = nextProjectLink;
 
           document.querySelector(".next-project h2").textContent =

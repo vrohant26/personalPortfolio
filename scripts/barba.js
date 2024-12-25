@@ -25,10 +25,6 @@ export const intiBarba = () => {
           return defaultLeave(data);
         },
 
-        // async beforeEnter(data){
-        //   data.current.container.style.backgroundColor = currentProject.backgroundColor
-        // },
-
         async enter(data) {
           defaultEnter(data);
         },
@@ -70,11 +66,11 @@ export const intiBarba = () => {
       {
         namespace: "home",
         beforeEnter() {
-          // preloader();
           addProject();
         },
         afterEnter() {
           setTimeout(() => {
+            
             fadeUp();
             headingAnimation();
             lineAnimation();
@@ -82,7 +78,7 @@ export const intiBarba = () => {
             accordion();
             getCurrentYear();
             openAnimation();
-
+           
             mobileMenu();
           }, 50);
         },
@@ -115,6 +111,7 @@ export const intiBarba = () => {
 
 export const defaultLeave = (data) => {
   const tl = gsap.timeline();
+  
 
   const nextLink = data.trigger;
   const urlParams = new URLSearchParams(new URL(nextLink.href).search);
